@@ -11,6 +11,7 @@ def membership(request):
 
 stripe.api_key = "sk_test_51KPpqoJAp5w3wtxOBWUnJsxJqEb3uaoG7AK0cbFTyHv5uYJsSYeLm5hb2e4CQ2HCO2sPKxaaNPBwuD9KK6KHqm5H0022pEx4RX"
 
+@login_required
 def checkout(request):
     try:
         if request.user.member.membership:
@@ -65,3 +66,25 @@ def success(request):
 
 def cancel(request):
     return render(request, 'membership/cancel.html')
+
+@login_required
+def settings(request):
+    membership = False
+    cancel_at_end = False
+    if request.method == 'POST':
+        subscription = stripe.Subscription.retrieve(request.user.member.stripe_member_id)
+        subscription.cancel_at_end = True
+        request.user.member.cancel_at_end = True
+        cancel_at_end = True
+        subscription.save()
+        request.user.member.save()
+    else:
+        try:
+            if request.user.member.membership:
+                membership = True
+            if request.user.member.cancel_at_end:
+                cancel_at_end = True
+        except Member.DoesNotExist:
+            membership = False
+    return render(request, 'membership/settings.html', {'membership':membership,
+    'cancel_at_end':cancel_at_end})
