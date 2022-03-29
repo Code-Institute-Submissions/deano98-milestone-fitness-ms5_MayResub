@@ -34,9 +34,11 @@ def membership(request):
             multiplier = 1.9
 
         user_tdee = BMR * multiplier
-        print(BMR)
-        print(multiplier)
-        print(user_tdee)
+        rounded_tdee = round(user_tdee/100)*100
+        current_member = Member.objects.get(user=request.user)
+        current_member.tdee = rounded_tdee
+        current_member.save()
+        current_member.save(update_fields=["tdee_update"]) 
 
     return render(request, 'membership/membership.html', {
         'tdee_form': TdeeForm(),
@@ -87,6 +89,7 @@ def checkout(request):
 def success(request):
     if request.method == 'GET' and 'session_id' in request.GET:
         session = stripe.checkout.Session.retrieve(request.GET['session_id'],)
+        print(session)
         member = Member()
         member.user = request.user
         member.stripe_id = session.customer
