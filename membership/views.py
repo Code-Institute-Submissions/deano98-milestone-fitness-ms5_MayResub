@@ -40,8 +40,8 @@ def checkout(request):
                 'quantity': 1,
             }],
             mode='subscription',
-            success_url='http://127.0.0.1:8000/success?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url='http://127.0.0.1:8000/cancel',
+            success_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu38.gitpod.io/membership/success?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu38.gitpod.io/membership/cancel',
         )
 
         return render(request, 'membership/checkout.html', {
@@ -49,3 +49,19 @@ def checkout(request):
             'membership': membership,
             'price': price,
             })
+
+def success(request):
+    if request.method == 'GET' and 'session_id' in request.GET:
+        session = stripe.checkout.Session.retrieve(request.GET['session_id'],)
+        member = Member()
+        member.user = request.user
+        member.stripe_id = session.customer
+        member.membership = True
+        member.cancel_at_end = False
+        member.stripe_member_id = session.subscription
+        member.save()
+    return render(request, 'membership/success.html')
+
+
+def cancel(request):
+    return render(request, 'membership/cancel.html')
