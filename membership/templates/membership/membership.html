@@ -1,2 +1,50 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
+<div class="overlay">
+    <div class="container top-padding">
+        <div class="row">
+            <div class="col-6">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Premium
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Premium Plan</h5>
+                        <p class="card-text">32.00 / month</p>
+                        <div class="text-right">
+                            <a href="{% url 'checkout' %}?membership=premium"><button type="button"
+                                    class="btn btn-lg btn-block btn-outline-primary">Subscribe to Premium
+                                    Plan</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Basic
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Basic Plan</h5>
+                        <p class="card-text">20.00 / month</p>
+                        <div class="text-right">
+                            <a href="{% url 'checkout' %}?membership=basic"><button type="button"
+                                    class="btn btn-lg btn-block btn-outline-primary">Subscribe to Basic
+                                    Plan</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{% endblock %}

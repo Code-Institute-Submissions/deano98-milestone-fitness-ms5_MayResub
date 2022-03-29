@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
+<div class="container top-padding">
+    <div class="row">
+        <div class="col-12">
+            <h3>Your Subscription</h3>
+        </div>
+        <div class="col-12">
+            <h4>{{ membership }}</h4>
+        </div>
+        <div class="col-12">
+            <h4>£{{ price }}</h4>
+        </div>
+    </div>
+</div>
+<div class="text-center pt-3">
+
+    <button id="checkout-button" data-secret="{{ session_id }}">
+        Checkout
+    </button>
+
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript">
+    var sessionid = "{{session_id}}";
+</script>
+<script src="{% static 'membership/js/checkout.js' %}"></script>
+{% endblock %}
