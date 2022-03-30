@@ -10,9 +10,9 @@
     <div class="container top-padding">
         <div class="container">
             <form action="" method="POST">
-              {{ tdee_form | crispy }}
-              {% csrf_token %}
-              <button class="btn btn-primary" type="submit">Calculate</button>
+                {{ tdee_form | crispy }}
+                {% csrf_token %}
+                <button class="btn btn-primary" id="profile-redirect" type="submit">Calculate</button>
             </form>
         </div>
     </div>
@@ -68,4 +68,5 @@
 {% endblock %}
 
 {% block postloadjs %}
+    <script src="{% static 'membership/js/checkout.js' %}"></script>
 {% endblock %}

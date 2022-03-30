@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from .models import Member
 from .forms import TdeeForm
+from datetime import datetime as dt
 import stripe
 
 # Create your views here.
@@ -37,8 +38,16 @@ def membership(request):
         rounded_tdee = round(user_tdee/100)*100
         current_member = Member.objects.get(user=request.user)
         current_member.tdee = rounded_tdee
+        current_member.gender = gender
+        current_member.weight = weight
+        current_member.height = height
+        current_member.age = age
+        current_member.activity = activity
+        current_member.tdee_update = dt.now()
         current_member.save()
-        current_member.save(update_fields=["tdee_update"]) 
+        print("TEST", current_member.tdee_update)
+
+        return redirect('profile_page:profile_page')
 
     return render(request, 'membership/membership.html', {
         'tdee_form': TdeeForm(),

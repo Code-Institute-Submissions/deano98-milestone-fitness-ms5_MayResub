@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'home',
     'membership',
-    'testimonials'
+    'testimonials',
+    'profile_page',
 ]
 
 MIDDLEWARE = [
