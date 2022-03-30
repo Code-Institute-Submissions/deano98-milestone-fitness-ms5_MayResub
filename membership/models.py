@@ -23,7 +23,4 @@ class Member(models.Model):
     def __str__(self):
         return self.user.username
 
-@receiver(post_save, sender=Member)
-def update_date(sender, instance, **kwargs):
-    instance.tdee_update = dt.now()
 

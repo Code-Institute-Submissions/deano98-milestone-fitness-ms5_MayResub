@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'membership',
     'testimonials',
     'profile_page',
+    'nutrition',
 ]
 
 MIDDLEWARE = [
