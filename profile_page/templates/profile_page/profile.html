@@ -1,2 +1,43 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block content %}
+<div class="container top-padding">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ current_member.user | title }}</h5>
+                    <hr>
+                    <p class="card-text">{{ current_member.age}} Years Old</p>
+                    <p class="card-text">{{ current_member.gender | title }}</p>
+                    <p class="card-text">Height: {{ current_member.height}}cm</p>
+                    <p class="card-text">Weight: {{ current_member.weight}}kg</p>
+                    <p class="card-text">Activity Level: {{ current_member.activity | title}}</p>
+                    <p class="card-text">TDEE: {{ current_member.tdee }} calories per day</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Set your goal:</h5>
+                    <hr>
+                    <form action="" class="list-group list-group-flush">
+                        <input type="radio" id="loss" name="goals" value="loss">
+                        <label for="html">Weight Loss</label><br>
+                        <input type="radio" id="maintain" name="goals" value="maintain">
+                        <label for="css">Maintenance</label><br>
+                        <input type="radio" id="gain" name="goals" value="gain">
+                        <label for="javascript">Weight Gain</label>
+                    </form>
+                    <hr>
+                    <h5 class="card-title">Target Calories: <strong class="target-cals"></strong></h5> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

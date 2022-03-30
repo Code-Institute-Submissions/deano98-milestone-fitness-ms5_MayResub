@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'cloudinary',
     'crispy_forms',
+    'jquery',
     'home',
     'membership',
     'testimonials',

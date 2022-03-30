@@ -60,23 +60,32 @@
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#"></a>
                 </li>
-                {% if user.is_authenticated %}
+                {% if user.is_authenticated and user.member.tdee  %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'membership' %}">Members</a>
+                    <a class="nav-link" href="{% url 'profile_page:profile_page' %}">Profile</a>
                   </li>
                 {% else %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'membership' %}">Membership</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                  {% if user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                  </li>
+                      <a class="nav-link" href="{% url 'membership' %}">Members</a>
+                    </li>
+                  {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'membership' %}">Membership</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                      </li>
+                    {% endif %}
                 {% endif %}
               </ul>
             </div>

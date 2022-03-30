@@ -13,7 +13,7 @@ class Member(models.Model):
     cancel_at_end = models.BooleanField(default=False)
     membership = models.BooleanField(default=False)
     tdee = models.IntegerField(blank=True, null=True)
-    tdee_update = models.DateTimeField(blank=True)
+    tdee_update = models.DateTimeField(blank=True, null=True)
     gender = models.CharField(max_length=6, blank=True, null=True)
     weight = models.IntegerField(blank=True, null=True)
     height = models.IntegerField(blank=True, null=True)
