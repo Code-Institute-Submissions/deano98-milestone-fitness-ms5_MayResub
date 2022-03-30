@@ -25,19 +25,39 @@
                     <h5 class="card-title">Set your goal:</h5>
                     <hr>
                     <form action="" class="list-group list-group-flush">
-                        <input type="radio" id="loss" name="goals" value="loss">
+                        <input type="radio" id="loss" name="goals" class="goals" value="loss">
                         <label for="html">Weight Loss</label><br>
-                        <input type="radio" id="maintain" name="goals" value="maintain">
+                        <input type="radio" id="maintain" name="goals" class="goals" value="maintain">
                         <label for="css">Maintenance</label><br>
-                        <input type="radio" id="gain" name="goals" value="gain">
+                        <input type="radio" id="gain" name="goals" class="goals" value="gain">
                         <label for="javascript">Weight Gain</label>
                     </form>
                     <hr>
-                    <h5 class="card-title">Target Calories: <strong class="target-cals"></strong></h5> 
+                    <h5 class="card-title">Target Calories: <strong class="target-cals"></strong></h5>
+                    <button>Calculate</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("button").click(function () {
+            var goalRadio = $(".goals:checked").val();
+            if (goalRadio === "loss") {
+                targetCals = {{ current_member.tdee }} - 200;
+            } else if (goalRadio === "maintain") {
+                targetCals = {{ current_member.tdee }};
+            } else {
+                targetCals = {{ current_member.tdee }} + 200;
+            }
+            $(".target-cals").html(targetCals);
+        });
+    });
+</script>
 
 {% endblock %}
