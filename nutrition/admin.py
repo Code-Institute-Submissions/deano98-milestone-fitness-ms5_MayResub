@@ -1,9 +1,7 @@
 from django.contrib import admin
-from .models import Calories, LeanTurkey, LeanMince, AromaticTurkey
+from .models import MealType, Meal
 
 # Register your models here.
 
-admin.site.register(Calories)
-admin.site.register(LeanTurkey)
-admin.site.register(LeanMince)
-admin.site.register(AromaticTurkey)
+admin.site.register(MealType)
+admin.site.register(Meal)

@@ -4,6 +4,22 @@
 {% block content %}
 <div class="container top-padding">
     NUTRITION
+    {% for meal in meals %}
+        {{ meal.name }}
+        {{ meal.instructions }}
+        {{ meal.dyn_ingredient_1 |default_if_none:"" }}
+        {{ meal.dyn_ingredient_2 |default_if_none:"" }}
+        {{ meal.dyn_ingredient_3 |default_if_none:"" }}
+        {{ meal.ingredient_1 |default_if_none:"" }}
+        {{ meal.ingredient_2 |default_if_none:"" }}
+        {{ meal.ingredient_3 |default_if_none:"" }}
+        {{ meal.ingredient_4 |default_if_none:"" }}
+        {{ meal.ingredient_5 |default_if_none:"" }}
+        {{ meal.ingredient_6 |default_if_none:"" }}
+        {{ meal.ingredient_7 |default_if_none:"" }}
+        {{ meal.ingredient_8 |default_if_none:"" }}
+        {{ meal.ingredient_9 |default_if_none:"" }}
+    {% endfor %}
 </div>
 
 {% endblock %}

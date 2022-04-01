@@ -41,7 +41,9 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <a class="nav-link active" aria-current="page" href="{% url 'nutrition:nutrition' %}?cals=targetCals">Nutrition</a>
+            {% for types in meal_types %}
+                <a class="nav-link active" aria-current="page" href="{% url 'nutrition:nutrition' meal_id=types.type %}">{{ types.type }}</a>
+            {% endfor %}
         </div>
     </div>
 </div>
