@@ -24,17 +24,18 @@
                 <div class="card-body">
                     <h5 class="card-title">Set your goal:</h5>
                     <hr>
-                    <form action="" class="list-group list-group-flush">
+                    <form action="" method="POST" class="list-group list-group-flush">
+                        {% csrf_token %}
                         <input type="radio" id="loss" name="goals" class="goals" value="loss">
                         <label for="html">Weight Loss</label><br>
                         <input type="radio" id="maintain" name="goals" class="goals" value="maintain">
                         <label for="css">Maintenance</label><br>
                         <input type="radio" id="gain" name="goals" class="goals" value="gain">
-                        <label for="javascript">Weight Gain</label>
+                        <label for="javascript">Weight Gain</label>                    
+                        <hr>
+                        <h5 class="card-title">Target Calories: <strong class="target-cals"></strong></h5>
+                        <button>Calculate</button>
                     </form>
-                    <hr>
-                    <h5 class="card-title">Target Calories: <strong class="target-cals"></strong></h5>
-                    <button>Calculate</button>
                 </div>
             </div>
         </div>

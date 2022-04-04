@@ -9,6 +9,20 @@ def profile_page(request):
 
     current_member = Member.objects.get(user=request.user)
     meal_types = MealType.objects.all()
+    goals = "loss"
+
+    if request.method == 'POST':
+        print(request.POST['goals'])
+        if request.POST['goals'] == "maintain":
+            goals = "maintain"
+        elif request.POST['goals'] == "gain":
+            goals = "gain"
+        else:
+            goals = "loss"
+    
+    print(current_member)
+    Member.objects.filter(user=request.user).update(goal=goals)
+
 
     return render(request, 'profile_page/profile.html', {
         'current_member': current_member,

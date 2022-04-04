@@ -3,22 +3,53 @@
 
 {% block content %}
 <div class="container top-padding">
-    NUTRITION
-    {% for meal in meals %}
-        {{ meal.name }}
-        {{ meal.instructions }}
-        {{ meal.dyn_ingredient_1 |default_if_none:"" }}
-        {{ meal.dyn_ingredient_2 |default_if_none:"" }}
-        {{ meal.dyn_ingredient_3 |default_if_none:"" }}
-        {{ meal.ingredient_1 |default_if_none:"" }}
-        {{ meal.ingredient_2 |default_if_none:"" }}
-        {{ meal.ingredient_3 |default_if_none:"" }}
-        {{ meal.ingredient_4 |default_if_none:"" }}
-        {{ meal.ingredient_5 |default_if_none:"" }}
-        {{ meal.ingredient_6 |default_if_none:"" }}
-        {{ meal.ingredient_7 |default_if_none:"" }}
-        {{ meal.ingredient_8 |default_if_none:"" }}
-        {{ meal.ingredient_9 |default_if_none:"" }}
+    {% for meal in meals %}                  
+        <div class="row">
+            {{ meal.name }} 
+            <div class="col">            
+                <ul>
+                    {% if meal.dyn_ingredient_1 %}
+                        <li>{{ meal.dyn_ingredient_1 |default_if_none:"" }} {{ meal.dyn_description_1 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.dyn_ingredient_2 %}
+                        <li>{{ meal.dyn_ingredient_2 |default_if_none:"" }} {{ meal.dyn_description_2 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.dyn_ingredient_3 %}
+                        <li>{{ meal.dyn_ingredient_3 |default_if_none:"" }} {{ meal.dyn_description_3 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.ingredient_1 %}
+                        <li>{{ meal.ingredient_1 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.ingredient_2 %}
+                        <li>{{ meal.ingredient_2 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.ingredient_3 %}
+                        <li>{{ meal.ingredient_3 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.ingredient_4 %}
+                        <li>{{ meal.ingredient_4 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.ingredient_5 %}
+                        <li>{{ meal.ingredient_5 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.ingredient_6 %}
+                        <li>{{ meal.ingredient_6 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.ingredient_7 %}
+                        <li>{{ meal.ingredient_7 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.ingredient_8 %}
+                        <li>{{ meal.ingredient_8 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.ingredient_9 %}
+                        <li>{{ meal.ingredient_9 |default_if_none:"" }}</li>
+                    {% endif %}
+                </ul>
+                <p class="text-start">
+                    {{ meal.instructions }}
+                </p>
+            </div>
+        </div>
     {% endfor %}
 </div>
 

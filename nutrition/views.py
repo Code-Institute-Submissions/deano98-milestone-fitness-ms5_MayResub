@@ -10,9 +10,6 @@ def nutrition(request, meal_id):
     current_member = Member.objects.get(user=request.user)
     tdee = current_member.tdee
 
-    print(meal_id)
-    print(request)
-
     meals = Meal.objects.filter(carb_type__type=meal_id)
 
     return render(request, 'nutrition/nutrition.html', {
