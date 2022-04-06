@@ -16,6 +16,8 @@
                     <p class="card-text">Weight: {{ current_member.weight}}kg</p>
                     <p class="card-text">Activity Level: {{ current_member.activity | title}}</p>
                     <p class="card-text">TDEE: {{ current_member.tdee }} calories per day</p>
+                    <p class="card-text">Last updated: {{ current_member.tdee_update }}</p>
+                    <p class="card-text">{{ update_message }}</p>
                 </div>
             </div>
         </div>
