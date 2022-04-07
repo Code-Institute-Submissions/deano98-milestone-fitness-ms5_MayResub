@@ -28,10 +28,13 @@
                     <hr>                  
                 </div>
                 <div class="col-12 col-sm-4">
-                    <a href="{% url 'testimonials' %}">
-                        <h2 class="display-6">Member Testimonials</h2>
-                    </a>
+                    <a href="{% url 'testimonials:testimonials' %}">
+                        <h2 class="display-6">Member Testimonials</h2>                        
+                    </a>                    
                     <hr>
+                    <p>{{ testimonials.0.title }}</p>
+                    <p>{{ testimonials.0.content }}</p>
+                    <p>{{ testimonials.0.user }}</p>
                 </div>
             </div>
         </div>
