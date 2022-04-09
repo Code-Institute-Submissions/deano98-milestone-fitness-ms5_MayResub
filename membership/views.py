@@ -40,12 +40,12 @@ def membership(request):
         current_member.tdee = rounded_tdee
         current_member.gender = gender
         current_member.weight = weight
+        current_member.current_weight = weight
         current_member.height = height
         current_member.age = age
         current_member.activity = activity
         current_member.tdee_update = dt.now()
         current_member.save()
-        print("TEST", current_member.tdee_update)
 
         return redirect('profile_page:profile_page')
 
@@ -68,14 +68,8 @@ def checkout(request):
     if request.method == 'POST':
         pass
     else:
-        if request.GET['membership'] == "premium":
-            membership = "Premium"
-            price = 32
-            price_id = "price_1KdwmcJAp5w3wtxO5BfJBzvv"
-        else:
-            membership = "Basic"
-            price = 20
-            price_id = "price_1Kdfs8JAp5w3wtxO6l24lzML"
+        price = 20
+        price_id = "price_1Kdfs8JAp5w3wtxO6l24lzML"
 
         session = stripe.checkout.Session.create(
             payment_method_types=['card'],

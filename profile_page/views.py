@@ -28,9 +28,9 @@ def profile_page(request):
     update_message = ""
 
     if  time_difference.days > 7:
-        update_message = "You haven't updated your profile in over 7 days, click here to see your progress"
+        update_message = "(Update now!)"
     else:
-        update_message = "Profile up to date"
+        update_message = "(Profile up to date)"
                            
 
     return render(request, 'profile_page/profile.html', {

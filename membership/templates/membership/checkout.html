@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container top-padding">
+<div class="container top-padding text-center">
     <div class="row">
         <div class="col-12">
             <h3>Your Subscription</h3>
@@ -20,7 +20,7 @@
 </div>
 <div class="text-center pt-3">
 
-    <button id="checkout-button" data-secret="{{ session_id }}">
+    <button type="button"class="btn btn-lg btn-block btn-outline-primary" id="checkout-button" data-secret="{{ session_id }}">
         Checkout
     </button>
 

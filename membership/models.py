@@ -17,6 +17,7 @@ class Member(models.Model):
     age = models.IntegerField(blank=True, null=True)
     activity = models.CharField(max_length=254, blank=True, null=True)
     goal = models.CharField(max_length=10, blank=True, null=True)
+    current_weight = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return self.user.username

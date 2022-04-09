@@ -5,27 +5,30 @@
 <div class="container top-padding">
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
-            <div class="card">
-                <img src="..." class="img-fluid rounded-start" alt="...">
+            <div class="card text-white bg-primary mb-3">
                 <div class="card-body">
                     <h5 class="card-title">{{ current_member.user | title }}</h5>
                     <hr>
                     <p class="card-text">{{ current_member.age}} Years Old</p>
                     <p class="card-text">{{ current_member.gender | title }}</p>
                     <p class="card-text">Height: {{ current_member.height}}cm</p>
-                    <p class="card-text">Weight: {{ current_member.weight}}kg</p>
+                    <p class="card-text">Starting Weight: {{ current_member.weight}}kg</p>
+                    <p class="card-text">Current Weight: {{ current_member.weight}}kg</p>
                     <p class="card-text">Activity Level: {{ current_member.activity | title}}</p>
                     <p class="card-text">TDEE: {{ current_member.tdee }} calories per day</p>
-                    <p class="card-text">Last updated: {{ current_member.tdee_update }}</p>
-                    <p class="card-text">{{ update_message }}</p>
+                    <p class="card-text">Last updated: {{ current_member.tdee_update }} {{ update_message }}</p>               
                 </div>
             </div>
         </div>
         <div class="col">
-            <div class="card">
+            <div class="card text-white bg-primary mb-3">
                 <div class="card-body">
                     <h5 class="card-title">Set your goal:</h5>
                     <hr>
+                    <p>
+                        Select your goal below and click submit so that we
+                        can create your tailored nutrition plan:
+                    </p>                    
                     <form action="" method="POST" class="list-group list-group-flush">
                         {% csrf_token %}
                         <input type="radio" id="loss" name="goals" class="goals" value="loss">
@@ -35,22 +38,253 @@
                         <input type="radio" id="gain" name="goals" class="goals" value="gain">
                         <label for="javascript">Weight Gain</label>                    
                         <hr>
-                        <h5 class="card-title">Target Calories: <strong class="target-cals"></strong></h5>
-                        <button>Calculate</button>
+                        <button type="submit" class="btn btn-lg btn-block btn btn-outline-light">Submit</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="welcome">
+        <div class="container text-center">
+            <div class="row">
+                <h1 class="site-header display-5 fw-bold">Food & Nutrition</h1> 
+            </div>           
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="display-6">
+                        You will be eating THREE main meals per day.
+                    </h3>
+                    <br>
+                    <h3 class="display-6">
+                        On days where you are training you will have TWO main meals from the
+                        reduced carbohydrate menu and ONE main meal from the carbohydrate refuel
+                        - post workout menu.
+                    </h3>
+                    <br>
+                    <h3 class="display-6">
+                        On rest days you will have THREE main meals from the reduced carbohydrate
+                        menu.
+                    </h3>                   
+                    <p class="lead top-padding-sm">
+                        You are doing what is known as macronutrient timing, using up your stored energy through training and then
+                        ensuring you top it back up with a meal rich in carbohydrates and protein, whilst keeping the fat intake low (you
+                        want your body to be the source for this!). So we have created a range of meals perfect for this, all found in the
+                        CARBOHYDRATE REFUEL - POST WORKOUT MENU. These meals are only to be eaten after you have trained, ideally
+                        around 60-90 minutes after you finish your session. Then throughout the rest of the day your meals are rich in
+                        healthy fats and reduced carbohydrates with the same level of protein, the options you can choose from here are
+                        all found in the REDUCED CARBOHYDRATE MENU.
+                    </p>
+                    <br>
+                    <p class="lead">
+                        On rest days ALL of your meals will be coming from the REDUCED CARBOHYDRATE MENU, giving your body those
+                        healthy fats it needs to power you through lower intensity activities and keeping the carbohydrate intake lower as
+                        they are not required.
+                    </p>
+                    <br>
+                    <p class="lead">
+                        Eating this way ensures your body is utilising the correct energy source in line with your energy demands, i.e.
+                        carbs for exercise and fats as a steady fuel for the remainder of your day and night and when not training
+                    </p>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                {% for types in meal_types %}
+                    <div class="col-12 col-md-6">   
+                        <button type="button" class="btn btn-light">                   
+                            <a class="nav-link active" aria-current="page" href="{% url 'nutrition:nutrition' meal_id=types.type %}">{{ types.type }}</a>
+                        </button>                        
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="shop">
+        <div class="container text-center">
+            <div class="row">
+                <h1 class="site-header display-5 fw-bold">Training</h1> 
+            </div>           
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="display-6">
+                        Let's have a look at how we will get that body fat burning!
+                    </h4>
+                    <br>
+                    <h4 class="display-6">
+                        High Intensity Interval Training (HIIT) is the only cardio you must do on the plan (unless you have
+                        chosen to continue with your own training). We are looking for short intervals of maximum intensity exercise
+                        separated by longer intervals of low to moderate intensity exercise. Because it involves briefly pushing yourself
+                        beyond the upper end of your aerobic exercise zone, it offers you several advantages that low intensity cardio
+                        doesn't, and takes a fraction of the time
+                    </h4>
+                    <br>
+                    <h4 class="display-6">
+                        We are looking to improve fitness, burn away fat and increase the amount of calories you burn post workout, this
+                        is known as the after burn, ramping up your metabolic rate (the rate at which your body uses up those calories)
+                        for sometimes up to 18 hours!
+
+                    </h4>                   
+                    <p class="lead top-padding-sm">
+                        We recommend doing your training in the morning, fasted, to maximise fat loss results but, if you can't, then don't
+                        worry, do it anytime - HIIT is effective any time of day.               
+                    </p>
+                    <br>
+                    <p class="lead">
+                        If you do decide to go on a sneaky long run or epic bike ride please be sure to do this instead of your HIIT session.
+                        Less is definitely more in this case and adding in extra cardio will massively compromise results. As always, if you
+                        want to discuss any aspect of this then just get in touch with your Support Hero who will be happy to help.
+                    </p>
+                    <br>
+                    <p class="lead">
+                        This cycle doesn't contain a resistance training programme. In cycles two and three we will start to incorporate
+                        weight training with HIIT cardio but, for now, we keep the focus on fat loss and fitness as well as increasing that
+                        metabolic rate. Trust us, this is more than enough to create a calorie deficit and get your body burning fat!
+
+                    </p>
+                    <br>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">HIIT WORKOUT INFO</h5>
+                            <hr>
+                            <p class="card-text"><strong>WARM UP:</strong> 5 minutes</p>
+                            <p class="card-text"><strong>HIIT DURATION:</strong> 20-25 minutes</p>
+                            <p class="card-text">
+                                (one working set followed by one
+                                resting set and repeat)
+                            </p>
+                            <p class="card-text"><strong>COOL DOWN:</strong> 5 minutes</p>
+                            <p class="card-text"><strong>TOTAL:</strong> 30-35 minutes</p>                   
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">GUIDELINES</h5>
+                            <hr>
+                            <p class="card-text"><strong>WORKING SET DURATION:</strong> 30-45 SECS</p>
+                            <p class="card-text">
+                                For your first workout, we recommend a 30 second
+                                duration. As you get fitter increase the working set
+                                duration to as high as 45 seconds.
+                            </p>
+                            <p class="card-text"><strong>RESTING SET DURATION:</strong> 15-60 SECS</p>
+                            <p class="card-text">
+                                For your first workout, we recommend a 60 second
+                                resting set duration. As you get fitter, reduce the resting
+                                set to as low as 15 seconds.
+                            </p>         
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="display-6 top-padding-sm">
+                        What exercises can you use?
+                    </h4>
+                    <br>                  
+                    <p class="lead">
+                        The great thing about this protocol is that you get to choose the method of HIIT you enjoy the most. It can be applied
+                        to any piece of cardio equipment at the gym such as - Bike, Treadmill, Boxing Bag, Cross Trainer, Rower etc               
+                    </p>
+                    <br>
+                    <p class="lead">
+                        If you do not belong to a gym then you can make up a session using a combination of body weight exercises such
+                        as mountain climbers, burpees, star jumps and sprinting on the spot. Don't stick to just one of them, that would
+                        be tough on your body and nowhere near as much fun!
+                    </p>
+                    <br>
+                    <p class="lead">
+                        Alternatively, if you do enjoy classes such as cross fit, body pump, spin or circuits these will also count as a HIIT
+                        session so feel free to add them in to your training. Remember it's one or the other: DO NOT do two sessions per
+                        day
+
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="welcome">
+        <div class="container text-center">
+            <div class="row">
+                <h1 class="site-header display-5 fw-bold">Progression</h1> 
+            </div>           
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="display-6">
+                        Progression is extremely important when it comes to achieving the very best results. Once your body adjusts to
+                        the working/resting set duration look to increase the intensity by altering these times. Without progression, your
+                        results may plateau. 
+                    </h3>
+                    <br>
+                    <h3 class="display-6">
+                        The first step is to reduce the resting set duration. Try dropping that to 30 seconds and then you could increase
+                        your working set to 45 seconds. Then, when you are a HIIT superstar, you could even be doing your session with
+                        only 15 seconds resting sets!
+                    </h3>
+                    <br>
+                    <h3 class="display-6">
+                        Just remember, HIIT is all about pushing yourself through the upper end of your aerobic zone, so if you don't feel
+                        that you are working near to your maximum, push yourself that little bit harder.
+                    </h3>
+                    <br>
+                    <hr>                  
+                    <br>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="card text-primary bg-light mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">TRACK YOUR PROGRESS</h5>
+                            <hr>
+                            <p class="card-text">
+                                Keep your profile up to date by logging your
+                                weight each week. You can compare your current
+                                weight to your starting weight to see how far you
+                                have come!
+                            </p>
+                            <br>                            
+                            <button type="button" class="btn btn-outline-primary">                   
+                                <a class="nav-link active" aria-current="page" href="{% url 'testimonials:testimonials' %}">Log Weight</a>
+                            </button> 
+                 
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-primary bg-light mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">SHOW OFF YOUR PROGRESS</h5>
+                            <hr>
+                            <p class="card-text">
+                                Write a testimonial to share your progress with your peers.
+                                Sharing your results can help motivate both yourself and others, 
+                                be proud of what you have achieved!
+                            </p>
+                            <br>                            
+                            <button type="button" class="btn btn-outline-primary">                   
+                                <a class="nav-link active" aria-current="page" href="{% url 'testimonials:testimonials' %}">Write Testimonial</a>
+                            </button>  
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            {% for types in meal_types %}
-                <a class="nav-link active" aria-current="page" href="{% url 'nutrition:nutrition' meal_id=types.type %}">{{ types.type }}</a>
-            {% endfor %}
+            
         </div>
-        <div class="col-12">
-            <a class="nav-link active" aria-current="page" href="{% url 'testimonials:testimonials' %}">Write Testimonial</a>
-        </div>
+        
     </div>
 </div>
 
@@ -68,7 +302,6 @@
             } else {
                 targetCals = {{ current_member.tdee }} + 200;
             }
-            $(".target-cals").html(targetCals);
         });
     });
 </script>

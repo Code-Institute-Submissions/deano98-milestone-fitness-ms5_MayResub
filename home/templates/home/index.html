@@ -10,10 +10,10 @@
     <div class="welcome">
         <div class="container text-center">
             <div class="row">
-                <h1 class="site-header display-5 fw-bold">Welcome To The Site</h1> 
+                <h1 class="site-header display-5 fw-bold">Welcome To Milestone Fitness</h1> 
             </div>
             <div class="row">
-                <div class="col-12 col-sm-4">
+                <div class="col-12 col-md-4">
                     <h2 class="display-6">TDEE Calculator</h2>
                     <hr>
                     <p class="lead">Your Total Daily Energy Expenditure (TDEE) is an 
@@ -23,18 +23,24 @@
                        multiplying that value by an activity multiplier.
                     </p>
                 </div>
-                <div class="col-12 col-sm-4">
-                    <h2 class="display-6">Nutrition & Workouts</h2>
-                    <hr>                  
-                </div>
-                <div class="col-12 col-sm-4">
-                    <a href="{% url 'testimonials:testimonials' %}">
-                        <h2 class="display-6">Member Testimonials</h2>                        
-                    </a>                    
+                <div class="col-12 col-md-4">
+                    <h2 class="display-6">Personalised Nutrition</h2>
                     <hr>
-                    <p>{{ testimonials.0.title }}</p>
-                    <p>{{ testimonials.0.content }}</p>
-                    <p>{{ testimonials.0.user }}</p>
+                    <p class="lead">Delicious low carb and high carb meals tailored to you
+                        to help you reach your goals. With this plan, you get to choose the meals you like, 
+                        so you never have to eat the same thing every day. Plus, lots of variety ensures you get
+                        all the nutrient-dense foods you need for optimum health. 
+                     </p>                
+                </div>
+                <div class="col-12 col-md-4">
+                    <h2 class="display-6">Fat Melting Workouts</h2>
+                    <hr>
+                    <p class="lead">High Intensity Interval Training (HIIT) will help
+                        you improve fitness, burn away fat and increase the amount 
+                        of calories you burn post workout, this is known as the after burn, 
+                        ramping up your metabolic rate (the rate at which your body uses up those calories)
+                        for sometimes up to 18 hours!
+                     </p>
                 </div>
             </div>
         </div>
@@ -43,17 +49,26 @@
     <div class="shop">
         <div class="container text-center">
             <div class="row">
-                <div class="col-12 col-sm-6">
-                    <h2 class="display-6">Buy our nutrition supplements and Merchandise</h2>
+                <h1 class="site-header display-5 fw-bold">Testimonials</h1> 
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4"> 
+                    <h5>{{ testimonials.0.title }}</h5>
                     <hr>
-                    <p class="lead">
-                        Nutrition supplements and merch info
-                    </p>
+                    <p>{{ testimonials.0.content }}</p>
+                    <p>- {{ testimonials.0.user }}</p>
                 </div>
-                <div class="col-12 col-sm-6">
-                    <img src="..." class="img-fluid" alt="...">
-                    <p class="lead">Placeholder
-                    </p>                
+                <div class="col-12 col-md-4"> 
+                    <h5>{{ testimonials.1.title }}</h5>
+                    <hr>
+                    <p>{{ testimonials.1.content }}</p>
+                    <p>- {{ testimonials.1.user }}</p>
+                </div>
+                <div class="col-12 col-md-4"> 
+                    <h5>{{ testimonials.2.title }}</h5>
+                    <hr>
+                    <p>{{ testimonials.2.content }}</p>
+                    <p>- {{ testimonials.2.user }}</p>
                 </div>
             </div>
         </div>
@@ -62,22 +77,14 @@
     <div class="subscription">
         <div class="container text-center">
             <div class="row">
-                <div class="col-12 col-sm-6">
-                    <img src="..." class="img-fluid" alt="..."> 
-                    <p class="lead">Placeholder
-                    </p>        
-                </div>
-                <div class="col-12 col-sm-6">
-                    <h2 class="display-6">
-                        Subscribe for personalised diet and
-                        workout plans
-                    </h2>
-                    <hr>
-                    <p class="lead">
-                        personalised diet and
-                        workout plans info
+                <h1 class="site-header display-5 fw-bold">Subscribe</h1>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        click here to subscribe
                     </p>
-                </div>                
+                </div>               
             </div>
         </div>
     </div>
