@@ -54,7 +54,7 @@ def membership(request):
         'tdee_form': TdeeForm(),
     })
 
-stripe.api_key = settings.STRIPE_API_KEY
+stripe.api_key = "sk_test_51KPpqoJAp5w3wtxOBWUnJsxJqEb3uaoG7AK0cbFTyHv5uYJsSYeLm5hb2e4CQ2HCO2sPKxaaNPBwuD9KK6KHqm5H0022pEx4RX"
 
 @login_required
 def checkout(request):
