@@ -4,7 +4,6 @@ from nutrition.models import MealType
 from .forms import WeightForm
 from datetime import datetime, timezone
 
-# Create your views here.
 
 def profile_page(request):
     ''' View to return the profile page page '''
@@ -39,7 +38,7 @@ def profile_page(request):
     })
 
 def log_weight(request):
-
+    '''View to return the page to update weight'''
     current_member = Member.objects.get(user=request.user)
 
     if request.method == 'POST':

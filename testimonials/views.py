@@ -8,7 +8,7 @@ from django.urls import reverse
 # Create your views here.
 
 def testimonials(request):
-    ''' View to return the index page '''
+    ''' View to return the testimonials page '''
 
     if request.method == 'POST':
         post_form = PostForm(data=request.POST)

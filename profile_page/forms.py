@@ -1,5 +1,6 @@
 from django import forms
 
+
 class WeightForm(forms.Form):
     ''' Total daily energy expenditure form '''
 

@@ -1,20 +1,24 @@
 from django.db import models
 
-# Create your models here.
 
 class MealType(models.Model):
+    '''Model for meal categories'''
     type = models.CharField(max_length=254, blank=True, null=True)
 
     def __str__(self):
         return self.type
 
+
 class MealCalories(models.Model):
+    '''Model for meal calories'''
     goal_calories = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return str(self.goal_calories)
 
+
 class MealIngredients(models.Model):
+    '''Model for each meals ingredients'''
     carb_type = models.ForeignKey("MealType", related_name='carbs', on_delete=models.CASCADE)
     meal_calories = models.ForeignKey("MealCalories", related_name='goal_cals', on_delete=models.CASCADE)
     name = models.CharField(max_length=254, blank=True, null=True)

@@ -1,12 +1,10 @@
-from django.shortcuts import render, redirect, reverse
+from datetime import datetime as dt
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.conf import settings
 from .models import Member
 from .forms import TdeeForm
-from datetime import datetime as dt
 import stripe
 
-# Create your views here.
 
 def membership(request):
     ''' View to return the membership page '''
@@ -54,7 +52,9 @@ def membership(request):
         'tdee_form': TdeeForm(),
     })
 
+
 stripe.api_key = "sk_test_51KPpqoJAp5w3wtxOBWUnJsxJqEb3uaoG7AK0cbFTyHv5uYJsSYeLm5hb2e4CQ2HCO2sPKxaaNPBwuD9KK6KHqm5H0022pEx4RX"
+
 
 @login_required
 def checkout(request):
@@ -90,7 +90,9 @@ def checkout(request):
             'price': price,
             })
 
+
 def success(request):
+    ''' View to return success page after successfully purchasing a sub'''
     if request.method == 'GET' and 'session_id' in request.GET:
         session = stripe.checkout.Session.retrieve(request.GET['session_id'],)
         print(session)
@@ -105,15 +107,18 @@ def success(request):
 
 
 def cancel(request):
+    '''View to return an error page after an unsuccessful attempt tp buy a sub'''
     return render(request, 'membership/cancel.html')
 
+
 @login_required
-def settings(request):
+def settings_page(request):
+    '''View to return the user settings page'''
     membership = False
     cancel_at_end = False
     if request.method == 'POST':
         subscription = stripe.Subscription.retrieve(request.user.member.stripe_member_id)
-        subscription.cancel_at_end = True
+        subscription.cancel_at_period_end = True
         request.user.member.cancel_at_end = True
         cancel_at_end = True
         subscription.save()
@@ -126,8 +131,8 @@ def settings(request):
                 cancel_at_end = True
         except Member.DoesNotExist:
             membership = False
-    return render(request, 'membership/settings.html', {'membership':membership,
-    'cancel_at_end':cancel_at_end})
 
-
-
+    return render(request, 'membership/settings.html', {
+        'membership': membership,
+        'cancel_at_end': cancel_at_end,
+        })
