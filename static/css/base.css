@@ -3,8 +3,8 @@ nav {
 }
 
 body {
-    background: url('/media/images/hero-image-min.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: url('../media/images/hero-image-min.jpg') no-repeat center center fixed;
+    background-size: cover; 
 }
 
 .hero {
@@ -47,4 +47,8 @@ body {
 
 .top-padding-sm {
     padding-top: 50px;
+}
+
+.sub-link a {
+    text-decoration: none;
 }

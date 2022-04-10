@@ -54,7 +54,7 @@ def membership(request):
         'tdee_form': TdeeForm(),
     })
 
-stripe.api_key = "sk_test_51KPpqoJAp5w3wtxOBWUnJsxJqEb3uaoG7AK0cbFTyHv5uYJsSYeLm5hb2e4CQ2HCO2sPKxaaNPBwuD9KK6KHqm5H0022pEx4RX"
+stripe.api_key = settings.STRIPE_API_KEY
 
 @login_required
 def checkout(request):
@@ -80,8 +80,8 @@ def checkout(request):
                 'quantity': 1,
             }],
             mode='subscription',
-            success_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu39.gitpod.io/membership/success?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu39.gitpod.io/membership/cancel',
+            success_url='https://milestone-fitness.herokuapp.com/membership/success?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url='https://milestone-fitness.herokuapp.com/membership/cancel',
         )
 
         return render(request, 'membership/checkout.html', {
