@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 from .models import Member
 from .forms import TdeeForm
 from datetime import datetime as dt
@@ -79,8 +80,8 @@ def checkout(request):
                 'quantity': 1,
             }],
             mode='subscription',
-            success_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu38.gitpod.io/membership/success?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu38.gitpod.io/membership/cancel',
+            success_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu39.gitpod.io/membership/success?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu39.gitpod.io/membership/cancel',
         )
 
         return render(request, 'membership/checkout.html', {

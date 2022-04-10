@@ -19,12 +19,6 @@ class MealIngredients(models.Model):
     meal_calories = models.ForeignKey("MealCalories", related_name='goal_cals', on_delete=models.CASCADE)
     name = models.CharField(max_length=254, blank=True, null=True)
     instructions = models.TextField(blank=True, null=True)
-    dyn_ingredient_1 = models.IntegerField(blank=True, null=True)
-    dyn_ingredient_2 = models.IntegerField(blank=True, null=True)
-    dyn_ingredient_3 = models.IntegerField(blank=True, null=True)
-    dyn_description_1 = models.CharField(max_length=254, blank=True, null=True)
-    dyn_description_2 = models.CharField(max_length=254, blank=True, null=True)
-    dyn_description_3 = models.CharField(max_length=254, blank=True, null=True)
     ingredient_1 = models.CharField(max_length=254, blank=True, null=True)
     ingredient_2 = models.CharField(max_length=254, blank=True, null=True)
     ingredient_3 = models.CharField(max_length=254, blank=True, null=True)
@@ -35,6 +29,9 @@ class MealIngredients(models.Model):
     ingredient_8 = models.CharField(max_length=254, blank=True, null=True)
     ingredient_9 = models.CharField(max_length=254, blank=True, null=True)
     ingredient_10 = models.CharField(max_length=254, blank=True, null=True)
+    ingredient_11 = models.CharField(max_length=254, blank=True, null=True)
+    ingredient_12 = models.CharField(max_length=254, blank=True, null=True)
+    ingredient_13 = models.CharField(max_length=254, blank=True, null=True)
 
     def __str__(self):
         return self.name + str(self.meal_calories)

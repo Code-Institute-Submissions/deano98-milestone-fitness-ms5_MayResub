@@ -19,9 +19,10 @@ def nutrition(request, meal_id):
     else:
         calories = tdee + 200
 
-    print(calories)
-    print(tdee)
-    print(goal)
+    if calories > 3000:
+        calories = 3000
+    elif calories < 1500:
+        calories = 1500
 
     meals = MealIngredients.objects.filter(carb_type__type=meal_id, meal_calories__goal_calories=calories)
 

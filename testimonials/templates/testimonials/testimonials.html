@@ -5,29 +5,32 @@
 {% block content %}
     <div class="container top-padding">
         <div class="row">
-            <div class="col">
-                <div class="col-6">
-                {% if user_testimonial %}
-                    <form action="{% url 'testimonials:testimonial_edit' user_testimonial.slug %}" method="POST">
-                        {{ post_form | crispy }}
-                        {% csrf_token %}
-                        <button class="btn btn-primary" type="submit">Edit</button>                        
-                    </form>
-                    <a class="btn btn-primary" href="{% url 'testimonials:testimonial_delete' user_testimonial.slug  %}" role="button">Delete</a>
-                </div>
-                <div class="col-6">
-                    {{ user_testimonial.title }}
-                    {{ user_testimonial.content }}
-                    {{ user_testimonial.created_on }}
-                </div>
-                {% else %}
-                    <form action="" method="POST">
-                        {{ post_form | crispy }}
-                        {% csrf_token %}
-                        <button class="btn btn-primary" type="submit">Submit</button>
-                    </form>
-                {% endif %} 
+            <div class="col-6">
+            {% if user_testimonial %}
+                <form action="{% url 'testimonials:testimonial_edit' user_testimonial.slug %}" method="POST">
+                    {{ post_form | crispy }}
+                    {% csrf_token %}
+                    <button class="btn btn-primary" type="submit">Edit</button>                        
+                </form>
+                <a class="btn btn-primary" href="{% url 'testimonials:testimonial_delete' user_testimonial.slug  %}" role="button">Delete</a>
             </div>
+            <div class="col-6">
+                <h3>
+                    Current Testimonial:
+                </h3>
+                <h5>{{ user_testimonial.title }}</h5>
+                <br>
+                <p>{{ user_testimonial.content }}</p>
+                <br>
+                <p>{{ user_testimonial.created_on }}</p>
+            </div>
+            {% else %}
+                <form action="" method="POST">
+                    {{ post_form | crispy }}
+                    {% csrf_token %}
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
+            {% endif %} 
         </div>
     </div>
 {% endblock %}

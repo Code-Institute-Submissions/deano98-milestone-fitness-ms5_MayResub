@@ -13,7 +13,7 @@
                     <p class="card-text">{{ current_member.gender | title }}</p>
                     <p class="card-text">Height: {{ current_member.height}}cm</p>
                     <p class="card-text">Starting Weight: {{ current_member.weight}}kg</p>
-                    <p class="card-text">Current Weight: {{ current_member.weight}}kg</p>
+                    <p class="card-text">Current Weight: {{ current_member.current_weight}}kg</p>
                     <p class="card-text">Activity Level: {{ current_member.activity | title}}</p>
                     <p class="card-text">TDEE: {{ current_member.tdee }} calories per day</p>
                     <p class="card-text">Last updated: {{ current_member.tdee_update }} {{ update_message }}</p>               
@@ -253,7 +253,7 @@
                             </p>
                             <br>                            
                             <button type="button" class="btn btn-outline-primary">                   
-                                <a class="nav-link active" aria-current="page" href="{% url 'testimonials:testimonials' %}">Log Weight</a>
+                                <a class="nav-link active" aria-current="page" href="{% url 'profile_page:log_weight' %}">Log Weight</a>
                             </button> 
                  
                         </div>
