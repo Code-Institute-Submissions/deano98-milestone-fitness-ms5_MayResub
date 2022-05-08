@@ -17,9 +17,9 @@ ACTIVITY_CHOICES = [
 class TdeeForm(forms.Form):
     ''' Total daily energy expenditure form '''
     gender = forms.ChoiceField(label='Gender', widget=forms.RadioSelect, choices=GENDER_CHOICES)
-    age = forms.IntegerField(required=True)
-    weight = forms.IntegerField(required=True)
-    height = forms.IntegerField(required=True)
+    age = forms.IntegerField(required=True, label='Age')
+    weight = forms.IntegerField(required=True, label='Weight (kg)')
+    height = forms.IntegerField(required=True, label='Height (cm)')
     activity = forms.MultipleChoiceField(
         required=True,
         widget=forms.Select,

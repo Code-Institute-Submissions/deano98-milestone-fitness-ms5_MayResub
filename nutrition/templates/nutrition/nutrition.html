@@ -4,9 +4,16 @@
 {% block content %}
 <div class="container top-padding">
     {% for meal in meals %}                         
-        <div class="row">
-            {{ meal.name }} 
-            <div class="col">                             
+        <div class="row">             
+            <div class="col-12 col-md-4">
+                <p>PLACEHOLDER</p>
+            </div>
+            <div class="col-12 col-md-8">
+                <h3>{{ meal.name }}</h3>
+            </div>
+            <hr class="ingredients-hr">
+            <div class="col-12 col-md-4">
+                <h5>Ingredients (1 serving)</h5>
                 <ul>
                     {% if meal.dyn_ingredient_1 %}
                         <li>{{ dynamic_ing_1.forloop.counter |default_if_none:"" }} {{ meal.dyn_description_1 |default_if_none:"" }}</li>
@@ -45,6 +52,10 @@
                         <li>{{ meal.ingredient_9 |default_if_none:"" }}</li>
                     {% endif %}
                 </ul>
+                
+            </div>
+            <div class="col-12 col-md-8">
+                <h5>Instructions</h5>
                 <p class="text-start">
                     {{ meal.instructions }}
                 </p>

@@ -52,3 +52,8 @@ body {
 .sub-link a {
     text-decoration: none;
 }
+
+.ingredients-hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
