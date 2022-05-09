@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container text-center top-padding">
+    <h2>500 - Internal Server Error</h2>
+    <p>Oops! Seems like there's a problem with the server</p>
+    <a class="btn btn-primary" aria-current="page" href="{% url 'home' %}">Return home</a>
+</div>
+
+{% endblock %}
