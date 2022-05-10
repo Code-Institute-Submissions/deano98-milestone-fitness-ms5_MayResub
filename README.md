@@ -4,16 +4,53 @@ Milestone Fitness is a django based application to help you achieve your fitness
 
 The app will take your details and calculate the amount of calories you should consume for what you want to achieve. A range of recipes will be offered which will be tailored to you and your goals, you will also be given a training routine which will go hand in hand with your nutrition plan and boost your progress!
 
+# UX
+
+## Strategy
+
+Target audience:
+
+  * 18 - 55 year olds
+  * People who want to lose weight
+  * People who want to improve their fitness
+
+What do users want from the site:
+
+  * Easy to use website which is easy to navigate
+  * Ability to subscribe to reap the benefits of the website
+  * Account functionality to track progress of weight loss
+  * Simple meal plans
+  * Workouts that can be done at home
+
+The website will offer all of these features once subscribed, the subscription process will be quick and painless.
+
+I will assume that the site will be visited by people on mobile, tablets and laptops. The website will have to be responsive 
+to allow for a pleasant user experience on all devices.
+
 # User Stories
 
-* As a site user I want to be able to easily register so that I can have my own profile 
-* As a site user I want to be able to easily log in or log out to access my profile
-* As a site user I want to be able to easily subscribe to use all of the tools the site offers
+## Core Functionality:
 
-* As a subscriber I'd like to get nutrition and exercise plans tailored to me so that I can achieve my fitness goals more efficiently 
-* As a subscriber I want to be able to write a testimonial share my progress with fellow subscibers to help motivate others and myself
-* As a subscriber I'd like to be able to edit / delete my testimonial if I ever need to
-* As a subscriber I want to be able to track my progress from when I first joined the site
+  * As a user I wish to be able to easily navigate througout the site 
+  * As a user I want to see all of the websites key information on the homepage
+  * As a user I can visit the website on any kind of device with a similar experience 
+  * As a user I wish to be able to easily create an account on the website
+
+## Subscribing
+
+  * As a user I'd like to be able easily subscribe to the website
+  * As a user I want to be able to easily see all of the features that come with a subscription
+  * As a user I would like to easily be able to cancel my subscription at any time.
+
+## Profile
+
+  * As a subscriber I want to be able to see all of my details on a profile page.
+  * As a subscriber I would like to be able to track my weight loss progress.
+  * As a subscriber I'd like to have access to a range of workouts I can do at home
+
+## Nutrition
+
+
 
 # Features
 
