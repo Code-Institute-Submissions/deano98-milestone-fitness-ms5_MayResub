@@ -41,14 +41,26 @@ to allow for a pleasant user experience on all devices.
   * As a user I'd like to be able easily subscribe to the website
   * As a user I want to be able to easily see all of the features that come with a subscription
   * As a user I would like to easily be able to cancel my subscription at any time.
+  * As an admin I can manually update a users membership status
 
 ## Profile
 
   * As a subscriber I want to be able to see all of my details on a profile page.
   * As a subscriber I would like to be able to track my weight loss progress.
-  * As a subscriber I'd like to have access to a range of workouts I can do at home
+  * As a subscriber I'd like to be able to leavee testimonials to share my progress with others.
+  * As a subscriber I need to be able to edit and delete my testimonial after it has been posted.
+  * As an admin I can edit or delete testimonials.
 
-## Nutrition
+## Nutrition and Fitness
+
+  * As a subscriber I want to get a meal plan personalised to me
+  * As a subscriber I'd like to see a list of ingredients and clear instructions on how to prepare each meal
+  * As a subscriber I would like to be given workouts I can do at home
+
+## Marketing
+
+  * As a user I can sign up for a newsletter to receive health and fitness tips
+  * As a user I would like to be able to visit a facebook page to keep up with the site.
 
 
 
