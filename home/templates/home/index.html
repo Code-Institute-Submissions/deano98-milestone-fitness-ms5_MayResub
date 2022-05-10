@@ -1,16 +1,21 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
 {% block content %}
+<div class="hero-image">
     <div class="container">
-        <div class="hero px-4 py-5 my-5 text-center">      
+        <div class="hero px-4 py-5 my-5 text-center">
         </div>
     </div>
 
-    <section class="welcome">
+    <section class="welcome blue-background">
         <div class="container text-center">
             <div class="row">
-                <h1 class="site-header display-5 fw-bold">Lose weight and improve your fitness at home!</h1> 
+                <h1 class="site-header display-5 fw-bold">Lose weight and improve your fitness at home!</h1>
             </div>
             <div class="row">
                 <div class="col-12 col-md-4">
@@ -25,56 +30,115 @@
                 <div class="col-12 col-md-4">
                     <h2 class="display-6">Meal plan generator</h2>
                     <hr>
-                    <p class="lead"><strong>A personalised weight loss plan for your body.</strong> With this plan, you get to choose the meals you like, 
+                    <p class="lead"><strong>A personalised weight loss plan for your body.</strong> With this plan, you get
+                        to choose the meals you like,
                         so you never have to eat the same thing every day. Plus, lots of variety ensures you get
                         all the nutrient-dense foods you need for <strong>optimum health.</strong>
-                     </p>                
+                    </p>
                 </div>
                 <div class="col-12 col-md-4">
                     <h2 class="display-6">Workout at home</h2>
                     <hr>
                     <p class="lead">High Intensity Interval Training (HIIT) will help
-                        you <strong>improve fitness</strong>, burn away fat and increase the amount 
-                        of calories you burn post workout, this is known as the after burn, 
+                        you <strong>improve fitness</strong>, burn away fat and increase the amount
+                        of calories you burn post workout, this is known as the after burn,
                         ramping up your metabolic rate (the rate at which your body uses up those calories)
                         for sometimes up to 18 hours! All with <strong>no equipment!</strong>
-                     </p>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="testimonials">
+    <section class="testimonials white-background">
         <div class="container text-center">
             <div class="row">
-                <h1 class="site-header display-5 fw-bold">Testimonials</h1> 
+                <h1 class="site-header display-5 fw-bold">Testimonials</h1>
             </div>
             <div class="row">
                 {% for testimonial in testimonials %}
-                    <div class="col-12 col-md-4"> 
-                        <h5>{{ testimonial.title }}</h5>
-                        <hr>
-                        <p>{{ testimonial.content }}</p>
-                        <p>- {{ testimonial.user }}</p>
-                    </div>
+                <div class="col-12 col-md-4">
+                    <h5>{{ testimonial.title }}</h5>
+                    <hr>
+                    <p>{{ testimonial.content }}</p>
+                    <p>- {{ testimonial.user }}</p>
+                </div>
                 {% endfor %}
             </div>
         </div>
     </section>
 
-    <section class="subscription">
+    <section class="subscription blue-background">
         <div class="container text-center">
             <div class="row">
-                <h1 class="site-header display-5 fw-bold">Subscribe</h1>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <p>
-                        Click <a class="sub-link" href="{% url 'membership' %}">here</a> to subscribe and get all the great features above!
-                    </p>
-                </div>               
+                <div class="col-12 col-md-6">
+                    <!-- Begin Mailchimp Signup Form -->
+                    
+                    <div id="mc_embed_signup">
+                        <form
+                            action="https://hotmail.us9.list-manage.com/subscribe/post?u=48dcd4b23ff628747018936b4&amp;id=5d062122e3"
+                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                            target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+                                <h2>Subscribe!</h2>
+                                <p>Get health and fitness tips by subscribing to our newsletter!</p>
+                                <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                                <div class="mc-field-group">
+                                    <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                                    </label>
+                                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                                </div>
+                                <div id="mce-responses" class="clear foot">
+                                    <div class="response" id="mce-error-response" style="display:none"></div>
+                                    <div class="response" id="mce-success-response" style="display:none"></div>
+                                </div>
+                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                        name="b_48dcd4b23ff628747018936b4_5d062122e3" tabindex="-1" value=""></div>
+                                <div class="optionalParent">
+                                    <div class="clear foot">
+                                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
+                                            class="button">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!--End mc_embed_signup-->
+                </div>
+                <div class="col-12 col-md-6 social">
+                    <h2>Social</h2>
+                    <p>Follow us on Facebook!</p>
+                    <a href="https://www.facebook.com/Milestone-Fitness-101394385913424"><i class="fab fa-facebook-square"></i></a>
+                </div>
             </div>
         </div>
     </section>
+</div>
 
+{% endblock %}
+
+{% block postloadjs %}
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+    </script>
+    <script type='text/javascript'>
+        (function ($) {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0] = 'EMAIL';
+            ftypes[0] = 'email';
+            fnames[1] = 'FNAME';
+            ftypes[1] = 'text';
+            fnames[2] = 'LNAME';
+            ftypes[2] = 'text';
+            fnames[3] = 'ADDRESS';
+            ftypes[3] = 'address';
+            fnames[4] = 'PHONE';
+            ftypes[4] = 'phone';
+            fnames[5] = 'BIRTHDAY';
+            ftypes[5] = 'birthday';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+    </script>
 {% endblock %}
