@@ -67,22 +67,64 @@ to allow for a pleasant user experience on all devices.
 # Features
 
 * All pages will include a navigation bar at the top, with links to register, log in, log out, the membership page, profile page and account settings.
+* Depending on if the user is subscribed / registered or not, they will see different links in the nav bar.
+* On smaller screens, the nav bar links will collapse down into a burger icon, clicking on this will open up a menu of the links above.
+* Clicking on these links will direct the user to the appropriate page on the site
 
 ## Homepage
 
-* The homepage will feature a hero image at the top, followed by a quick intro to the sites features and subscriber testimonials.
+* The homepage will feature a responsive hero image, this will zoom out more as the resolution gets smaller.
+* The next section of the homepage lists the sites features that are included with the subscription.
+* The above features are listed across the screen on large screens, this collapses down to 1 column on smaller screens
+* The following section shows 3 randomly selected testimonials from the database, the same responsive styling as above is applied.
+
+## Registration
+
+* The registration for the site is handled by allauth to allow for a quick and painless registration process.
 
 ## Membership
 
 * The membership page is where you can subscribe, it will feature the monthly price and all of the features you will get as a subscriber. Once you have purchased your subscription you will be redirected back to this page to fill in a form with your details to calculate your total daily energy expediture.
+* Unregistered users will be prompted to register before they are able to subscribe. In this situation the subscribe button will be replaced 
+with a link to register
+* The subscribe button will direct to a confirmation page, allowing the user to confirm the details of the subscription before proceeding.
+* The confirmation page will show confirmation of the price, features and a reminder that members are able to cancel at any time, a subscribe button will
+proceed to the checkout.
+* The checkout is handled by Stripe.
+* Once the checkout is complete the user will be directed to one of the screens below.
+* If the subscription was successful, the user will be redirected to a simple success screen with a link to return to the membership page
+* If the subscription was unsuccessful, the user will be redirected to a simple error screen with a link to return to the membership page
+* Once subscribed, the membership page will feature a form which the user must fill in.
+* The form requires data such as height and weight, this will calculate the caloric intake for that user so that the meal plans can be created.
+* Once the form has been filled in with valid data, the user can click calculate to log their data. They will then be redirected to the Profile page.
 
 ## Profile
 
-* The profile page is the hub for a subscribed member. You will be able to see your details and set your goal. All of the information about how the plan works is displayed here as well as links to your tailored meals and the option to write a testimonial.
+* The profile page is the hub for subscribed members.
+* The top of the page features all of the data logged using the form on the previous screen.
+* The above section also includes the "Current Weight", this defaults as the weight entered in the form previously, but can be updated by the user
+to track the progress of their weight loss.
+* Also at the top of this page are a set of radio buttons which set the users goal.
+* The user can select either Weight Loss, Maintenance or Weight Gain. This will update the users target calories in the database and update their meal
+plan accordingly.
+* The remainder of this page contains all of the information about the workouts and nutrition plan.
+* The nutrition section contains 2 links, one for the low carb meals and one for high carb meals.
+* The progression section contains links to both the testimonial page and the weight log page.
+* The testimonial page contains a simple form for writing a review of the site, once published this could feature on the homepage.
+* Users are able to edit or delete published testimonials.
+* The weight log page contains a simple form to log your current weight, this will update the current weight part at the top of the page.
+Users are recommended to do this once per week.
+
+## Nutrition
+
+* The nutrition page contains all of the ingredients and instructions needed to prepare the meals included with the site.
+* Depending on the users target calories in the database, the amount of ingredients will change so that they take in the perfect amount of calories for their goals.
+* The page will either show low carb or high carb meals, depending on which link the user clicked on.
 
 ## Settings
 
 * This page will allow you to cancel your membership if needed.
+* If the membership has been cancelled, the page will display a notice that their membership has been cancelled and will run to the end of their billing cycle.
 
 # Technologies Used
 
