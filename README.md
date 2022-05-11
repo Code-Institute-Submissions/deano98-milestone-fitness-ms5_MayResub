@@ -126,6 +126,40 @@ Users are recommended to do this once per week.
 * This page will allow you to cancel your membership if needed.
 * If the membership has been cancelled, the page will display a notice that their membership has been cancelled and will run to the end of their billing cycle.
 
+# Future Features
+
+  * A feature currently out of scope that I'd like to add is a shop for merchandise and nutritional supplements.
+
+# Colour Scheme 
+
+  * The sites colour scheme is blue (#0d6efd) and white throughout. Giving the site a clean and modern look.
+
+# Wireframes
+
+### Homepage
+
+* [Desktop](docs/wireframes/homepage.png) 
+* [Tablet](docs/wireframes/homepage-tablet.png)
+* [Mobile](docs/wireframes/homepage-mobile.png)
+
+### Subscription
+
+* [Desktop](docs/wireframes/subscription.png) 
+* [Tablet](docs/wireframes/subscription-tablet.png)
+* [Mobile](docs/wireframes/subscription-mobile.png)
+
+### Profile
+
+* [Desktop](docs/wireframes/profile.png) 
+* [Tablet](docs/wireframes/profile-tablet.png)
+* [Mobile](docs/wireframes/profile-mobile.png)
+
+### Nutrition
+
+* [Desktop](docs/wireframes/nutrition.png) 
+* [Tablet](docs/wireframes/nutrition-tablet.png)
+* [Mobile](docs/wireframes/nutrition-mobile.png)
+
 # Technologies Used
 
 ### Integrated Development Environment
