@@ -42,16 +42,6 @@ nav, .offcanvas {
     padding-bottom: 30px;
 }
 
-/* .overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
-} */
-
 .top-padding {
     padding-top: 100px;
 }
@@ -65,8 +55,13 @@ nav, .offcanvas {
 }
 
 .ingredients-hr {
+    color: #0d6efd;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.blue-font {
+    color: #0d6efd;
 }
 
 #mc_embed_signup {
