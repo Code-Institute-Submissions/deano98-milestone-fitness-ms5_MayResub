@@ -95,7 +95,6 @@ def success(request):
     ''' View to return success page after successfully purchasing a sub'''
     if request.method == 'GET' and 'session_id' in request.GET:
         session = stripe.checkout.Session.retrieve(request.GET['session_id'],)
-        print(session)
         member = Member()
         member.user = request.user
         member.stripe_id = session.customer

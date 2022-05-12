@@ -56,7 +56,6 @@ def testimonial_delete(request, slug):
     testimonial = Post.objects.get(slug=slug)
 
     if request.user == testimonial.user:
-        print(request.user, testimonial.user, slug)
         testimonial.delete()
 
     return HttpResponseRedirect(reverse('profile_page:profile_page'))

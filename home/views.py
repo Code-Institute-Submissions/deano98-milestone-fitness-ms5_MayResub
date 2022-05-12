@@ -7,8 +7,6 @@ def index(request):
 
     testimonials = Post.objects.all().order_by("?")[:3]
 
-    print(testimonials)
-
     return render(request, 'home/index.html', {
         'testimonials': testimonials,
     })
