@@ -296,6 +296,39 @@ site to focus more on this, utilising semantics such as headers and strong tags.
 
 # Testing
 
+## Core Functionality:
+
+  * As a user I wish to be able to easily navigate througout the site 
+  * As a user I want to see all of the websites key information on the homepage
+  * As a user I can visit the website on any kind of device with a similar experience 
+  * As a user I wish to be able to easily create an account on the website
+
+## Subscribing
+
+  * As a user I'd like to be able easily subscribe to the website
+  * As a user I want to be able to easily see all of the features that come with a subscription
+  * As a user I would like to easily be able to cancel my subscription at any time.
+  * As an admin I can manually update a users membership status
+
+## Profile
+
+  * As a subscriber I want to be able to see all of my details on a profile page.
+  * As a subscriber I would like to be able to track my weight loss progress.
+  * As a subscriber I'd like to be able to leavee testimonials to share my progress with others.
+  * As a subscriber I need to be able to edit and delete my testimonial after it has been posted.
+  * As an admin I can edit or delete testimonials.
+
+## Nutrition and Fitness
+
+  * As a subscriber I want to get a meal plan personalised to me
+  * As a subscriber I'd like to see a list of ingredients and clear instructions on how to prepare each meal
+  * As a subscriber I would like to be given workouts I can do at home
+
+## Marketing
+
+  * As a user I can sign up for a newsletter to receive health and fitness tips
+  * As a user I would like to be able to visit a facebook page to keep up with the site.
+
 ### Code Validation
 
 [W3C Markup Validation](https://validator.w3.org/) 
@@ -306,26 +339,7 @@ site to focus more on this, utilising semantics such as headers and strong tags.
 
 ### Testing User Stories
 
-1. As a site user I want to be able to easily register so that I can have my own profile 
- * If a user isn't registered, they will be able to make an account using the Register link on the navigation bar.
 
-2. As a site user I want to be able to easily log in or log out to access my profile
- * Users can click on the links on the nav bar to log in or out
-
-3. As a site user I want to be able to easily subscribe to use all of the tools the site offers
- * Registered site members are able to subscribe using the membership link in the navbar
-
-4. As a subscriber I'd like to get nutrition and exercise plans tailored to me so that I can achieve my fitness goals more efficiently 
- * subscribers are given a range of meals and workouts tailored to the details they have given during the set up process.
-
-5. As a subscriber I want to be able to write a testimonial share my progress with fellow subscibers to help motivate others and myself
- * Subscribers are able to write a testimonial via the profile page
-
-6. As a subscriber I'd like to be able to edit / delete my testimonial if I ever need to
- * Subscribers are able to edit and delete their testimonials
-
-7. As a subscriber I want to be able to track my progress from when I first joined the site
- * Subscribers can update their weight whenever they want and compare it to their starting weight.
 
 ## Supported Devices
 

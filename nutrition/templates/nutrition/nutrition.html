@@ -15,15 +15,6 @@
             <div class="col-12 col-md-4">
                 <h5>Ingredients (1 serving)</h5>
                 <ul>
-                    {% if meal.dyn_ingredient_1 %}
-                        <li>{{ dynamic_ing_1.forloop.counter |default_if_none:"" }} {{ meal.dyn_description_1 |default_if_none:"" }}</li>
-                    {% endif %}
-                    {% if meal.dyn_ingredient_2 %}
-                        <li>{{ meal.dyn_ingredient_2 |default_if_none:"" }} {{ meal.dyn_description_2 |default_if_none:"" }}</li>
-                    {% endif %}
-                    {% if meal.dyn_ingredient_3 %}
-                        <li>{{ meal.dyn_ingredient_3 |default_if_none:"" }} {{ meal.dyn_description_3 |default_if_none:"" }}</li>
-                    {% endif %}
                     {% if meal.ingredient_1 %}
                         <li>{{ meal.ingredient_1 |default_if_none:"" }}</li>
                     {% endif %}
@@ -50,6 +41,18 @@
                     {% endif %}
                     {% if meal.ingredient_9 %}
                         <li>{{ meal.ingredient_9 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.ingredient_10 %}
+                        <li>{{ meal.ingredient_10 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.ingredient_11 %}
+                        <li>{{ meal.ingredient_11 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.ingredient_12 %}
+                        <li>{{ meal.ingredient_12 |default_if_none:"" }}</li>
+                    {% endif %}
+                    {% if meal.ingredient_13 %}
+                        <li>{{ meal.ingredient_13 |default_if_none:"" }}</li>
                     {% endif %}
                 </ul>
                 
