@@ -64,7 +64,6 @@ def checkout(request):
     except Member.DoesNotExist:
         pass
 
-    membership = ""
     price = 0
     if request.method == 'POST':
         pass
@@ -86,7 +85,6 @@ def checkout(request):
 
         return render(request, 'membership/checkout.html', {
             'session_id': session.id,
-            'membership': membership,
             'price': price,
             })
 
