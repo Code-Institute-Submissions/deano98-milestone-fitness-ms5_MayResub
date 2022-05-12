@@ -41,6 +41,7 @@ class MealIngredients(models.Model):
     ingredient_12 = models.CharField(max_length=254, blank=True, null=True)
     ingredient_13 = models.CharField(max_length=254, blank=True, null=True)
     image = models.ImageField(blank=True, null=True)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
 
     def __str__(self):
         return self.name + str(self.meal_calories)
