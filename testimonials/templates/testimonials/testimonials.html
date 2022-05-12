@@ -10,9 +10,9 @@
                 <form action="{% url 'testimonials:testimonial_edit' user_testimonial.slug %}" method="POST">
                     {{ post_form | crispy }}
                     {% csrf_token %}
-                    <button class="btn btn-primary" type="submit">Edit</button>                        
-                </form>
-                <a class="btn btn-primary" href="{% url 'testimonials:testimonial_delete' user_testimonial.slug  %}" role="button">Delete</a>
+                    <button class="btn btn-primary" type="submit">Edit</button> 
+                    <a class="btn btn-primary" href="{% url 'testimonials:testimonial_delete' user_testimonial.slug  %}" role="button">Delete</a>                       
+                </form>                
             </div>
             <div class="col-6">
                 <h3>
