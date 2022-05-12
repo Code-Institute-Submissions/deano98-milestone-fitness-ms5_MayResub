@@ -14,7 +14,9 @@
                         <p class="card-text">{{ current_member.gender | title }}</p>
                         <p class="card-text">Height: {{ current_member.height}}cm</p>
                         <p class="card-text">Starting Weight: {{ current_member.weight}}kg</p>
-                        <p class="card-text">Current Weight: {{ current_member.current_weight}}kg</p>
+                        <p class="card-text">Current Weight: {{ current_member.current_weight}}kg
+                            <a class="text-link" href="{% url 'profile_page:log_weight' %}"> - Click here to log weight</a>
+                        </p>
                         <p class="card-text">Activity Level: {{ current_member.activity | title}}</p>
                         <p class="card-text">TDEE: {{ current_member.tdee }} calories per day</p>
                         <p class="card-text">Last updated: {{ current_member.tdee_update }} {{ update_message }}</p>               
