@@ -83,22 +83,22 @@ nav, .offcanvas {
     margin-top: 20px;
 }
 
-a:link { 
+a:link.text-link { 
     color: white;
     text-decoration: none!important; 
 }
 
-a:visited {
+a:visited.text-link {
     color: white;
     text-decoration: none!important; 
 }
 
-a:hover {
+a:hover.text-link {
     color: white;
     text-decoration: none!important; 
 }
 
-a:active {
+a:active.text-link {
     color: white;
     text-decoration: none!important; 
 }
