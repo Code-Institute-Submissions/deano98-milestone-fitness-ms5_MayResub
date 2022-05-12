@@ -6,7 +6,9 @@
     {% for meal in meals %}                       
         <div class="row blue-font">           
             <div class="col-12 col-md-4">
-                <p>PLACEHOLDER</p>
+                {% if meal.image %}
+                    <img class="img-fluid" src="{{ meal.image.url }}" alt="{{ meal.name }}">
+                {% endif %}
             </div>
             <div class="col-12 col-md-8">
                 <h3>{{ meal.name }}</h3>
@@ -54,8 +56,7 @@
                     {% if meal.ingredient_13 %}
                         <li>{{ meal.ingredient_13 |default_if_none:"" }}</li>
                     {% endif %}
-                </ul>
-                
+                </ul>                
             </div>
             <div class="col-12 col-md-8">
                 <h5>Instructions</h5>
@@ -63,7 +64,10 @@
                     {{ meal.instructions }}
                 </p>
             </div>
-        </div>          
+        </div>
+        {% if not forloop.last %}
+            <hr class="ingredients-hr">
+        {% endif %}        
     {% endfor %}
 </div>
 
