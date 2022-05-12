@@ -3,6 +3,10 @@ from django.contrib.auth.models import User
 
 
 class Post(models.Model):
+    '''
+    Model to define the schema for
+    users testimonials
+    '''
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(
         max_length=200, unique=True,
@@ -13,4 +17,4 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return str(self.title)

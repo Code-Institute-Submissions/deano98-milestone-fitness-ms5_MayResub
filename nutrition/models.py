@@ -6,7 +6,7 @@ class MealType(models.Model):
     type = models.CharField(max_length=254, blank=True, null=True)
 
     def __str__(self):
-        return self.type
+        return str(self.type)
 
 
 class MealCalories(models.Model):

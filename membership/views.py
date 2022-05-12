@@ -1,9 +1,9 @@
 from datetime import datetime as dt
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+import stripe
 from .models import Member
 from .forms import TdeeForm
-import stripe
 
 
 def membership(request):
@@ -18,9 +18,9 @@ def membership(request):
         multiplier = 1
 
         if gender == "male":
-            BMR = 66 + (13.7 * weight) + (5 * height) - (6.8 * age)
+            bmr = 66 + (13.7 * weight) + (5 * height) - (6.8 * age)
         else:
-            BMR = 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age)
+            bmr = 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age)
 
         if activity == "sedentary":
             multiplier = 1.2
@@ -33,7 +33,7 @@ def membership(request):
         else:
             multiplier = 1.9
 
-        user_tdee = BMR * multiplier
+        user_tdee = bmr * multiplier
         rounded_tdee = round(user_tdee/100)*100
         current_member = Member.objects.get(user=request.user)
         current_member.tdee = rounded_tdee
@@ -58,6 +58,11 @@ stripe.api_key = "sk_test_51KPpqoJAp5w3wtxOBWUnJsxJqEb3uaoG7AK0cbFTyHv5uYJsSYeLm
 
 @login_required
 def checkout(request):
+    '''
+    A view render the checkout page and
+    generate a stripe checkout session
+    when a user wants to subscribe to the site
+    '''
     try:
         if request.user.member.membership:
             return redirect('settings')
@@ -114,7 +119,6 @@ def cancel(request):
 @login_required
 def settings_page(request):
     '''View to return the user settings page'''
-    membership = False
     cancel_at_end = False
     if request.method == 'POST':
         subscription = stripe.Subscription.retrieve(
@@ -128,13 +132,13 @@ def settings_page(request):
     else:
         try:
             if request.user.member.membership:
-                membership = True
+                membership_bool = True
             if request.user.member.cancel_at_end:
                 cancel_at_end = True
         except Member.DoesNotExist:
-            membership = False
+            membership_bool = False
 
     return render(request, 'membership/settings.html', {
-        'membership': membership,
+        'membership_bool': membership_bool,
         'cancel_at_end': cancel_at_end,
         })

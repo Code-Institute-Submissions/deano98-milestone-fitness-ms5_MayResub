@@ -1,8 +1,8 @@
+from datetime import datetime, timezone
 from django.shortcuts import render, redirect
 from membership.models import Member
 from nutrition.models import MealType
 from .forms import WeightForm
-from datetime import datetime, timezone
 
 
 def profile_page(request):

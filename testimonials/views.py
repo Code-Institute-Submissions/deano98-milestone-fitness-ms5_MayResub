@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .forms import PostForm
-from .models import Post
 from django.utils.text import slugify
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from .forms import PostForm
+from .models import Post
 
 # Create your views here.
 
@@ -36,6 +36,10 @@ def testimonials(request):
 
 
 def testimonial_edit(request, slug):
+    '''
+    View to allow users to edit their
+    own testimonials
+    '''
 
     testimonial = Post.objects.get(slug=slug)
 
@@ -52,6 +56,10 @@ def testimonial_edit(request, slug):
 
 
 def testimonial_delete(request, slug):
+    '''
+    View to allow users to delete their
+    own testimonials
+    '''
 
     testimonial = Post.objects.get(slug=slug)
 
