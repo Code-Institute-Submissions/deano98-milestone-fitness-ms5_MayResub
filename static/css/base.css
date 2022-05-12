@@ -50,6 +50,10 @@ nav, .offcanvas {
     padding-top: 50px;
 }
 
+.form-btn {
+    margin-top: 20px;
+}
+
 .sub-link a {
     text-decoration: none;
 }
