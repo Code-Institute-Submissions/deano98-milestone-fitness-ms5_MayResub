@@ -244,34 +244,55 @@ site to focus more on this, utilising semantics such as headers and strong tags.
 ### Integrated Development Environment
 
 * Github
+  * Used to host my codes repository
+
+* Git
+  * Used to manage and store revisions of the project
+
+* Gitpod
+  * The development environment
 
 ### Languages Used
 
 * HTML
+  * The front end coding language used 
 * CSS
+  * Another front end coding language, handling the presentation of the site
 * Python
+  * The core back end coding language used
 * JavaScript
+  * Secondary back end language used for things like the checkout
 
 ### Database
 
 * PostreSQL
+  * Used to store the relational databases utilised by the site
+* SQLite
+  * Used to run the sites databases locally
 
 ### Storage
 
 * Cloudinary
 
-### Frameworks
+### Frameworks & Libraries
 
 * Django
+  * The core framework used to create the site and each of it's apps
 * Bootstrap
+  * Used to help with the styling of the site and to make it responsive on all devices
 * jQuery
+  * Used on the profile page to allow the radio button to update the database.
 
-### Packages and other Tools
+### Packages and other tools
 
 * gunicorn
+  * Used to run the python application instance
 * psycopg2
+  * PostgreSQL database adapter
 * django allauth
+  * Package to handle all of the registration and authentication for the site
 * django crispy forms
+  * Used to add bootstrap styling to django forms
 
 # Testing
 
