@@ -53,7 +53,7 @@ def membership(request):
     })
 
 
-stripe.api_key = "sk_test_51KPpqoJAp5w3wtxOBWUnJsxJqEb3uaoG7AK0cbFTyHv5uYJsSYeLm5hb2e4CQ2HCO2sPKxaaNPBwuD9KK6KHqm5H0022pEx4RX"
+stripe.api_key = "sk_test_51KPpqoJAp5w3wtxOBWUnJsxJqEb3uaoG7AK0cbFTyHv5uYJsSYeLm5hb2e4CQ2HCO2sPKxaaNPBwuD9KK6KHqm5H0022pEx4RX"  # noqa
 
 
 @login_required
@@ -80,8 +80,8 @@ def checkout(request):
                 'quantity': 1,
             }],
             mode='subscription',
-            success_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu44.gitpod.io/membership/success?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu44.gitpod.io/membership/cancel',
+            success_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu44.gitpod.io/membership/success?session_id={CHECKOUT_SESSION_ID}',  # noqa
+            cancel_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu44.gitpod.io/membership/cancel',  # noqa
         )
 
         return render(request, 'membership/checkout.html', {
@@ -107,7 +107,10 @@ def success(request):
 
 
 def cancel(request):
-    '''View to return an error page after an unsuccessful attempt tp buy a sub'''
+    '''
+    View to return an error page after
+    an unsuccessful attempt tp buy a sub
+    '''
     return render(request, 'membership/cancel.html')
 
 
@@ -117,7 +120,9 @@ def settings_page(request):
     membership = False
     cancel_at_end = False
     if request.method == 'POST':
-        subscription = stripe.Subscription.retrieve(request.user.member.stripe_member_id)
+        subscription = stripe.Subscription.retrieve(
+            request.user.member.stripe_member_id
+            )
         subscription.cancel_at_period_end = True
         request.user.member.cancel_at_end = True
         cancel_at_end = True

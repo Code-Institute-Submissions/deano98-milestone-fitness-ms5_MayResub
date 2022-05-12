@@ -19,23 +19,24 @@ def profile_page(request):
             goals = "gain"
         else:
             goals = "loss"
-    
+
     Member.objects.filter(user=request.user).update(goal=goals)
 
     member_tdee_update = current_member.tdee_update
     time_difference = datetime.now(timezone.utc) - member_tdee_update
     update_message = ""
 
-    if  time_difference.days > 7:
+    if time_difference.days > 7:
         update_message = "(Update now!)"
     else:
-        update_message = "(Profile up to date)"                           
+        update_message = "(Profile up to date)"
 
     return render(request, 'profile_page/profile.html', {
         'current_member': current_member,
         'meal_types': meal_types,
         'update_message': update_message,
     })
+
 
 def log_weight(request):
     '''View to return the page to update weight'''

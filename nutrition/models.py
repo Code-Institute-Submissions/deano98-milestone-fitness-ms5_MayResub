@@ -19,8 +19,12 @@ class MealCalories(models.Model):
 
 class MealIngredients(models.Model):
     '''Model for each meals ingredients'''
-    carb_type = models.ForeignKey("MealType", related_name='carbs', on_delete=models.CASCADE)
-    meal_calories = models.ForeignKey("MealCalories", related_name='goal_cals', on_delete=models.CASCADE)
+    carb_type = models.ForeignKey(
+        "MealType", related_name='carbs', on_delete=models.CASCADE
+        )
+    meal_calories = models.ForeignKey(
+        "MealCalories", related_name='goal_cals', on_delete=models.CASCADE
+        )
     name = models.CharField(max_length=254, blank=True, null=True)
     instructions = models.TextField(blank=True, null=True)
     ingredient_1 = models.CharField(max_length=254, blank=True, null=True)

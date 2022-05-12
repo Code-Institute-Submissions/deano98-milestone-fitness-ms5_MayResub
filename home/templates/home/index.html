@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -124,9 +124,9 @@
 {% endblock %}
 
 {% block postloadjs %}
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+    <script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
     </script>
-    <script type='text/javascript'>
+    <script>
         (function ($) {
             window.fnames = new Array();
             window.ftypes = new Array();

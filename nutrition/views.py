@@ -23,7 +23,9 @@ def nutrition(request, meal_id):
     elif calories < 1500:
         calories = 1500
 
-    meals = MealIngredients.objects.filter(carb_type__type=meal_id, meal_calories__goal_calories=calories)
+    meals = MealIngredients.objects.filter(
+        carb_type__type=meal_id, meal_calories__goal_calories=calories
+        )
 
     return render(request, 'nutrition/nutrition.html', {
         'current_memeber': current_member,

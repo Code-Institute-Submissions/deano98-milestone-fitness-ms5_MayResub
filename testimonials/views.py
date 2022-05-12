@@ -7,6 +7,7 @@ from django.urls import reverse
 
 # Create your views here.
 
+
 def testimonials(request):
     ''' View to return the testimonials page '''
 
@@ -37,17 +38,16 @@ def testimonials(request):
 def testimonial_edit(request, slug):
 
     testimonial = Post.objects.get(slug=slug)
-    
 
     if request.user == testimonial.user:
-        
+
         if request.method == 'POST':
             post_form = PostForm(request.POST, instance=testimonial)
             if post_form.is_valid():
                 post_form.save()
         else:
             post_form = PostForm()
-    
+
     return HttpResponseRedirect(reverse('profile_page:profile_page'))
 
 
@@ -60,4 +60,3 @@ def testimonial_delete(request, slug):
         testimonial.delete()
 
     return HttpResponseRedirect(reverse('profile_page:profile_page'))
-

@@ -28,14 +28,12 @@
                             <h5 class="card-title">20.00 / month</h5>
                             {% if user.is_authenticated %}
                                 <div class="text-right">
-                                    <a href="{% url 'checkout' %}"><button type="button"
-                                            class="btn btn-lg btn-block btn-outline-primary">Subscribe to Milestone Fitness</button></a>
+                                    <a class="btn btn-lg btn-block btn-outline-primary" href="{% url 'checkout' %}">Subscribe to Milestone Fitness</a>
                                 </div>
                             {% else %}
                                 <div class="container top-padding">
                                     <p>Please register before subscribing</p>
-                                    <a href="{% url 'account_signup' %}"><button type="button"
-                                        class="btn btn-lg btn-block btn-outline-primary">Register</button></a>
+                                    <a class="btn btn-lg btn-block btn-outline-primary" href="{% url 'account_signup' %}">Register</a>
                                 </div>
                             {% endif %}
                         </div>
@@ -82,7 +80,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 
 {% endblock %}
