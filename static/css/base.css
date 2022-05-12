@@ -19,7 +19,7 @@ nav, .offcanvas {
 }
 
 .hero-image {
-    background: url('static/images/hero-image-min.jpg') no-repeat center center fixed;
+    background: url('https://res.cloudinary.com/dw3z4b69m/image/upload/v1652395649/static/images/hero-image-min.b101d551d20c.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
