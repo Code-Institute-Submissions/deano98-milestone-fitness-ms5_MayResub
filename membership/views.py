@@ -84,8 +84,8 @@ def checkout(request):
                 'quantity': 1,
             }],
             mode='subscription',
-            success_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu44.gitpod.io/membership/success?session_id={CHECKOUT_SESSION_ID}',  # noqa
-            cancel_url='https://8000-deano98-milestonefitnes-jto732nfenq.ws-eu44.gitpod.io/membership/cancel',  # noqa
+            success_url='https://milestone-fitness.herokuapp.com/membership/success?session_id={CHECKOUT_SESSION_ID}',  # noqa
+            cancel_url='https://milestone-fitness.herokuapp.com/membership/cancel',
         )
 
         return render(request, 'membership/checkout.html', {
