@@ -78,3 +78,23 @@ nav, .offcanvas {
 .social {
     margin-top: 20px;
 }
+
+a:link { 
+    color: white;
+    text-decoration: none!important; 
+}
+
+a:visited {
+    color: white;
+    text-decoration: none!important; 
+}
+
+a:hover {
+    color: white;
+    text-decoration: none!important; 
+}
+
+a:active {
+    color: white;
+    text-decoration: none!important; 
+}
