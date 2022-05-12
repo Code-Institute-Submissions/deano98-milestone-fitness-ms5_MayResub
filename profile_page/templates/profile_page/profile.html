@@ -8,7 +8,9 @@
             <div class="col">
                 <div class="card text-white bg-primary mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">{{ current_member.user | title }}</h5>
+                        <h5 class="card-title">{{ current_member.user | title }}
+                            <a class="text-link" href="{% url 'membership' %}"> - Click here to update profile</a>
+                        </h5>
                         <hr>
                         <p class="card-text">{{ current_member.age}} Years Old</p>
                         <p class="card-text">{{ current_member.gender | title }}</p>
