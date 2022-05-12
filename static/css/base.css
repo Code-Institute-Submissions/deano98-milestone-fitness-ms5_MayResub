@@ -19,7 +19,7 @@ nav, .offcanvas {
 }
 
 .hero-image {
-    background: url('/media/images/hero-image.jpg') no-repeat center center fixed;
+    background: url('static/images/hero-image-min.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
