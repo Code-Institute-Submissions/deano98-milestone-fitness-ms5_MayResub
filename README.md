@@ -62,8 +62,6 @@ to allow for a pleasant user experience on all devices.
   * As a user I can sign up for a newsletter to receive health and fitness tips
   * As a user I would like to be able to visit a facebook page to keep up with the site.
 
-
-
 # Features
 
 * All pages will include a navigation bar at the top, with links to register, log in, log out, the membership page, profile page and account settings.
@@ -159,6 +157,87 @@ Users are recommended to do this once per week.
 * [Desktop](docs/wireframes/nutrition.png) 
 * [Tablet](docs/wireframes/nutrition-tablet.png)
 * [Mobile](docs/wireframes/nutrition-mobile.png)
+
+# Entity Relationship Diagram
+
+* [ERD](docs/ERD/erd.png)
+
+# Marketing
+
+### Facebook
+
+* The site has a facebook page to help drive engagement from their huge userbase and attempt to increase traffic to the site.
+* The page will keep followers updated with the site and offer health and fitness tips.
+
+* [Facebook](docs/screenshots/fb-screenshot.png)
+* [Facebook2](docs/screenshots/fb-screenshot-2.png)
+
+### Newsletter
+
+* Site users will also be able to sign up to a newsletter which will provide site news, health tips and potentially discount offers
+if the shop is set up.
+* The newsletter is created using mailchimp.
+
+### Search Engine Optimization
+
+The topics I started were as follows:
+
+* Fitness
+* Nutrition
+* Lose Weight
+* Exercise
+
+I built upon these with the following:
+
+#### Fitness
+
+* I want to improve my fitness
+* How can I improve my fitness
+* Health and Fitness
+
+#### Nutrition
+
+* Nutrition plan
+* Meal plan
+* Personalised nutrtition plan
+* Personalised meal plan for weight loss
+* Clean eating
+
+#### Lose Weight
+
+* I want to lose weight
+* I want to lose fat
+* How can I lose weight
+* Weight loss plan
+
+#### Exercise
+
+* Training
+* Exercise plan
+* Workout plan for beginners
+* High intensity interval training
+* Exercise for weight loss
+
+After doing some research and testing all of these keywords using Googles search engine, I refined the list above into the keywords below.
+
+The list below was formed by checking the "Related search" and "People also ask" sections of the google search. The refined list will now 
+hopefully contain keywords which have a high search volume, yet unique enough to boost the sites SEO.
+
+* Health and Fitness
+* How to improve fitness fast
+* How to keep fit at home
+* Best way to improve fitness
+* Lose weight fast
+* Personalised weight loss plan for my body
+* Meal plan generator based on macros
+* Exercise for weight loss at home
+* No equipment workout plan
+
+I noticed there was a big demand for home workouts, "fast" results and no equipment workouts. Since the pandemic working out at home 
+has become a lot more popular. As the workouts on my site can all be done without equipment and at home, I've updated the info on the 
+site to focus more on this, utilising semantics such as headers and strong tags.
+
+* [SDE](docs/screenshots/sde-homepage.png)
 
 # Technologies Used
 
