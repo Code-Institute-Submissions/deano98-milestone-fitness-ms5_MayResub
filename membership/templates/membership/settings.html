@@ -8,9 +8,12 @@
             {% if cancel_at_end %}
                 <p>Your membership has been cancelled and will run to the end of your billing cycle.</p>
             {% elif membership %}
+                <h4>Are you sure you want to cancel?</h4>
+                <h4>Once cancelled your membership will remain active end of your billing cycle.</h4>
                 <form action="{% url 'settings' %}" method="POST">
                     {% csrf_token %}
-                    <input type="submit" value="Cancel Membership?">
+                    <!-- <input type="submit" value="Cancel Membership?"> -->
+                    <button class="btn btn-primary form-btn" id="profile-redirect" type="submit">Cancel Membership</button>
                 </form>
             {% else %}
                 <a href="{% url 'membership' %}">Get a membership</a>
