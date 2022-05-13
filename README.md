@@ -520,18 +520,26 @@ All testing was done using Google chrome.
 # Deployment
 
 1. GitPod
-  * Migrate changes to database.
+  * Run the following command in the terminal to update the requirements.txt file with all of the projects dependancies:
+  * `pip3 freeze --local > requirements.txt`
+  * Create a Procfile which is required to deploy with Heroku
+  * Migrate changes to database using the following command:
+  * `python3 manage.py migrate`
   * Change Debug in settings.py to False
+  * Commit and push everything to the repository.
 
 2. Heroku
+  * Go to Heroku and log in or register if you haven't already
   * Navigate to the apps page on Heroku
   * Click new > Create app
   * Enter a unique name for your app and choose your region
   * Click create app
   * Navigate to the Settings tab and click Reveal Config Vars
-  * Add CLOUDINARY_URL and input the Cloudinary URL
+  * Add CLOUDINARY_URL and input your Cloudinary API Environment variable - making sure to delete the "CLOUDINARY_URL=" part of the variable.
   * Add DATABASE_URL and input the postgres URL
   * Add SECRET_KEY and input your secret key
+  * Navigate to the resources tab
+  * Click add-ons and install Heroku Postgres
   * Navigate to the Deploy tab
   * Click on Connect to GitHub in the deployment method section
   * Enter your projects repository name in the Connect to GitHub section, then click search.
