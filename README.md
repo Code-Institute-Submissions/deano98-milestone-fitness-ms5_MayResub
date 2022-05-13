@@ -331,14 +331,25 @@ site to focus more on this, utilising semantics such as headers and strong tags.
 
 ### Code Validation
 
-[W3C Markup Validation](https://validator.w3.org/) 
+[W3C Markup Validation](https://validator.w3.org/)
+
+* For the html code I pasted in the urls for the pages that didn't require authorisation.
+* For pages that did require authorisation, I copied the code from google dev tools to paste directly into the validator.
 
 [W3C CSS Validation](https://jigsaw.w3.org/css-validator/)
 
-* For the Python code I used the problems tab in GitPod
+* For the css code, I pasted the base.css file directly into the validator
 
-### Testing User Stories
+[PEP8 Validation](http://pep8online.com/)
 
+* For the Python code I used both Pep8 above, as well as the flake8 validator in the gitpod terminal.
+* Pep8 had no errors
+* Flake8 returned some negligible pylint errors
+
+[Beautify Tools](https://beautifytools.com/javascript-validator.php)
+
+* For the small amount of JS I validated with Beautify
+* The code returned 3 defined errors as they were defined in the view.
 
 
 ## Supported Devices
