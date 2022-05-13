@@ -126,11 +126,17 @@ Users are recommended to do this once per week.
 
 # Future Features
 
-  * A feature currently out of scope that I'd like to add is a shop for merchandise and nutritional supplements.
+* A feature currently out of scope that I'd like to add is a shop for merchandise and nutritional supplements.
 
-# Colour Scheme 
+# Design
 
-  * The sites colour scheme is blue (#0d6efd) and white throughout. Giving the site a clean and modern look.
+### Colour Scheme 
+
+* The sites colour scheme is blue (#0d6efd) and white throughout. Giving the site a clean and modern look.
+
+### Typography
+
+* The two fonts used on the website are Lato and Raleway, a pairing recommended by Google. The fonts have a clean and modern look and will complement the theme of the Gym perfectly. Sans Serif will be a substitute if the chosen fonts don't work.
 
 # Wireframes
 
