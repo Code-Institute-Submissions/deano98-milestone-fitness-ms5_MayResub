@@ -243,7 +243,7 @@ I noticed there was a big demand for home workouts, "fast" results and no equipm
 has become a lot more popular. As the workouts on my site can all be done without equipment and at home, I've updated the info on the 
 site to focus more on this, utilising semantics such as headers and strong tags.
 
-* [SEO](docs/screenshots/sde-homepage.png)
+* [SEO](docs/screenshots/seo-homepage.png)
 
 # Technologies Used
 
