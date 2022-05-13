@@ -302,38 +302,173 @@ site to focus more on this, utilising semantics such as headers and strong tags.
 
 # Testing
 
+I have opted to use manual testing for the project. Each of my user stories will be tested throughly to ensure all of the features work as intended.
+All testing was done using Google chrome.
+
 ## Core Functionality:
 
-  * As a user I can easily navigate throughout the site so that I can get to where I want quickly
-  * As a user I can see the sites key information on the homepage so that I know what the site is offering immediately
-  * As a user I can visit the site on any device so that I can visit on the go 
-  * As a user I can create an account so that use the sites features
+1. As a user I can easily navigate throughout the site so that I can get to where I want quickly
+  * The nav bar at the top of the page allows for quick navigation around the site.
+  * As per the screenshots below, the nav bar correctly changes depending on wether the user is logged in or not.
+
+  * [Logged in](docs/screenshots/nav-bar.png)
+  * [Logged out](docs/screenshots/nav-bar-logged-out.png)
+
+  * The bar also correctly collapses down into a burger icon on smaller screens.
+  * When the burger is clicked, this opens up all of the sites links as per the screenshot below
+
+  * [Collapsed nav bar](docs/screenshots/nav-bar-small.png)
+  * [Opened nav bar](docs/screenshots/nav-bar-open.png)
+
+
+2. As a user I can see the sites key information on the homepage so that I know what the site is offering immediately
+  * All of the key info about the site is displayed in the first section of the homepage.
+  * As per the screenshots below, the homepage is resposive to smaller screens
+
+  * [Key info](docs/screenshots/site-info.png)
+  * [Key info tablet](docs/screenshots/key-info-tablet.png)
+  * [key info mobile](docs/screenshots/key-info-mobile.png)
+
+3. As a user I can visit the site on any device so that I can visit on the go 
+  * Following on from the above, each page on the site is fully responsive on all devices as per the below screenshots
+
+  * [Homepage](docs/screenshots/homepage-responsive.png)
+
+  * [Membership](docs/screenshots/membership-no-reg.png)
+
+  * [Profile](docs/screenshots/profile-screen.png)
+  * [Profile tablet](docs/screenshots/profile-tablet.png)
+  * [Profile mobile](docs/screenshots/profile-mobile.png)
+
+  * [Nutrition](docs/screenshots/nutrition-page.png)
+  * [Nutrition tablet](docs/screenshots/nutrition-tablet.png)
+  * [Nutrition mobile](docs/screenshots/profile-mobile.png)
+
+4. As a user I can create an account so that use the sites features
+  * Users are able to create an account very easily thanks to allauth.
+  * I have tested the sign up process thoroughly to make sure there are no issues:
+
+  * As per the screenshot below, the form will give a validation error if you attempt to sign up with an invalid email
+  * [Invalid email](docs/screenshots/register-invalid-email.png)
+
+  * Validation errors will also be given if you enter a duplicate username
+  * The same is true if you enter a password that is too short
+  * [Invalid username or password](docs/screenshots/register-invalid-username-password.png)
+
+  * The password will also be invalid if it is too similar to the username.
+  * [Invalid username or password](docs/screenshots/register-pass-too-similar.png)
+
+  * If the above fields are entered correctly, the user is registered and ready to go.
 
 ## Subscribing
 
-  * As a user I can easily subscribe so that I can benefit from the premium features without hassle
-  * As a user I can see all of the subscription so that make an informed decision on wether to subscribe
-  * As a subscriber I can cancel my membership at any time if I change my mind
-  * As an admin I can manually update a members subscription status in case the need arises to
+1. As a user I can easily subscribe so that I can benefit from the premium features without hassle
+  * Once the user is registered, the site correctly displays the subscribe button. Otherwise the user is prompted to register:
+
+  * [Subscribe](docs/screenshots/subscribe-button.png)
+  * [Register](docs/screenshots/please-register.png)
+
+  * Clicking on the subscribe button will take you to the confirm page, so the user can make sure they are happy before proceeding to checkout.
+
+  * [Confirm](docs/screenshots/sub-confirm.png)
+
+  * Once confirmed this will take you through the stripe checkout, when the user has entered their billing details they are returned to the site:
+
+  * [Success](docs/screenshots/congrats.png)
+
+
+2. As a user I can see all of the subscription features so that I can make an informed decision on wether to subscribe.
+  * All of the features you get with a membership are on both the homepage and membership page:
+
+  * [Sub details](docs/screenshots/membership-reg.png)
+
+3. As a subscriber I can cancel my membership at any time if I change my mind
+  * Members can visit the settings page on the nav bar to cancel their subscription if needed:
+
+  * [Cancel](docs/screenshots/cancel-membership.png)
+
+  * Once cancelled, the settings page will let the user know that their subscription will run to the end of their final billing cycle:
+
+  * [Cancelled](docs/screenshots/membership-cancelled.png)
+
+4. As an admin I can manually update a members subscription status in case the need arises to
+  * Membership status can be amended in the admin panel:
+
+  * [Membership Admin](docs/screenshots/membership-admin.png)
+
 
 ## Profile
 
-  * As a subscriber I can view my details on the profile page
-  * As a subscriber I can compare my starting weight with my current weight so that I can track my progress
-  * As a subscriber I can leave a testimonial so that share my progress with other users
-  * As a subscriber I can edit or delete my testimonial so that I can change it if needed
-  * As an admin I can edit or delete testimonials so that I can change them if needed
+1. As a subscriber I can view my details on the profile page
+  * Once a user has subscribed, they will be asked to enter their details into the TDEE form to generate their profile
+  * The form requires all fields to be valid as per the screenshots below:
+
+  * [TDEE form validation](docs/screenshots/tdee-form-validation.png)
+  * [TDEE form validation 2](docs/screenshots/tdee-validation-2.png)
+  * [TDEE form validation 3](docs/screenshots/tdee-missing-field.png)
+
+2. As a subscriber I can compare my starting weight with my current weight so that I can track my progress
+  * Once the user has entered valid details into the form, they can go to the profile page
+  * Clicking on the log weight button will allow users to update the current weight part of the profile
+  * See screenshots below for weight log validation:
+
+  * [Weight log validation](docs/screenshots/log-weight-validation.png)
+  * [Weight log validationn 2](docs/screenshots/log-weight-validation-2.png)
+
+  * Once a valid weight is logged, the current weight is successfully updated:
+
+  * [Weight log](docs/screenshots/weight-log.png)
+
+3. As a subscriber I can leave a testimonial so that share my progress with other users
+  * Users can leave testimonials by clicking the write testimonial button on the profile page.
+  * As per the previous forms users must submit a valid form for the testimonial to be published.
+  * The testimonial then has a random chance to displayed on the homepage.
+
+  * [Testimonial](docs/screenshots/testimonial.png)
+  * [Testimonial validation](docs/screenshots/testimonial-validation.png)
+  * [Testimonial homepage](docs/screenshots/testimonial-homepage.png)
+  * [Testimonial random](docs/screenshots/testimonial-random.png)
+
+4. As a subscriber I can edit or delete my testimonial so that I can change it if needed
+  * Once published the user is able to edit or delete it as they see fit.
+
+  * [Testimonial edit](docs/screenshots/testimonial-edit.png)
+
+5. As an admin I can edit or delete testimonials so that I can change them if needed
+  * Testimonials are fully editable withing the sites admin panel:
+
+  * [Testimonial admin](docs/screenshots/testimonial-delete-admin.png)
 
 ## Nutrition and Fitness
 
-  * As a subscriber I can get a personalised meal plan so that I can lose weight
-  * As a subscriber I can see a list of ingredients and instructions for each meal so that I can prepare them easily
-  * As a Subscriber I can get workouts I can do at home so that I can improve my fitness
+1. As a subscriber I can get a personalised meal plan so that I can lose weight
+  * Members have access to the sites meal plan from the profile page
+  * As per the screenshots below, the ingredients correctly change dependant on the users caloric intake saved in the database:
+
+  * [High carb meals](docs/screenshots/high-carb.png)
+  * [Ingredients change](docs/screenshots/ingredients-change.png)
+
+2. As a subscriber I can see a list of ingredients and instructions for each meal so that I can prepare them easily
+  * Full ingredients list and instructions are present for meals as shown above.
+  * Please note - as this website is for the project's purposes only, there is only 2 meals for each category.
+
+3. As a Subscriber I can get workouts I can do at home so that I can improve my fitness
+  * Subscribers get full instructions for doing their own home workouts:
+
+  * [Workouts](docs/screenshots/workout-guide.png)
 
 ## Marketing
 
-  * As a User I can sign up for a newsletter so that I can receive health and fitness tips
-  * As a user I can visit a facebook page so that keep up to date with the site
+1. As a User I can sign up for a newsletter so that I can receive health and fitness tips
+  * Newsletter functionality is provided by MailChimp, fully tested and working as shown in the screenshots below:
+
+  * [Newsletter](docs/screenshots/high-carb.png)
+  * [Newsletter clicked](docs/screenshots/newsletter-thanks.png)
+  * [MailChimp](docs/screenshots/mailchimp-sub.png)
+
+
+2. As a user I can visit a facebook page so that keep up to date with the site.
+  * Users can visit the sites facebook page by clicking on the link at the bottom of the homepage.
 
 ### Code Validation
 
