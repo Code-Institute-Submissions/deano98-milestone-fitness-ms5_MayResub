@@ -237,7 +237,7 @@ I noticed there was a big demand for home workouts, "fast" results and no equipm
 has become a lot more popular. As the workouts on my site can all be done without equipment and at home, I've updated the info on the 
 site to focus more on this, utilising semantics such as headers and strong tags.
 
-* [SDE](docs/screenshots/sde-homepage.png)
+* [SEO](docs/screenshots/sde-homepage.png)
 
 # Technologies Used
 
@@ -298,36 +298,36 @@ site to focus more on this, utilising semantics such as headers and strong tags.
 
 ## Core Functionality:
 
-  * As a user I wish to be able to easily navigate througout the site 
-  * As a user I want to see all of the websites key information on the homepage
-  * As a user I can visit the website on any kind of device with a similar experience 
-  * As a user I wish to be able to easily create an account on the website
+  * As a user I can easily navigate throughout the site so that I can get to where I want quickly
+  * As a user I can see the sites key information on the homepage so that I know what the site is offering immediately
+  * As a user I can visit the site on any device so that I can visit on the go 
+  * As a user I can create an account so that use the sites features
 
 ## Subscribing
 
-  * As a user I'd like to be able easily subscribe to the website
-  * As a user I want to be able to easily see all of the features that come with a subscription
-  * As a user I would like to easily be able to cancel my subscription at any time.
-  * As an admin I can manually update a users membership status
+  * As a user I can easily subscribe so that I can benefit from the premium features without hassle
+  * As a user I can see all of the subscription so that make an informed decision on wether to subscribe
+  * As a subscriber I can cancel my membership at any time if I change my mind
+  * As an admin I can manually update a members subscription status in case the need arises to
 
 ## Profile
 
-  * As a subscriber I want to be able to see all of my details on a profile page.
-  * As a subscriber I would like to be able to track my weight loss progress.
-  * As a subscriber I'd like to be able to leavee testimonials to share my progress with others.
-  * As a subscriber I need to be able to edit and delete my testimonial after it has been posted.
-  * As an admin I can edit or delete testimonials.
+  * As a subscriber I can view my details on the profile page
+  * As a subscriber I can compare my starting weight with my current weight so that I can track my progress
+  * As a subscriber I can leave a testimonial so that share my progress with other users
+  * As a subscriber I can edit or delete my testimonial so that I can change it if needed
+  * As an admin I can edit or delete testimonials so that I can change them if needed
 
 ## Nutrition and Fitness
 
-  * As a subscriber I want to get a meal plan personalised to me
-  * As a subscriber I'd like to see a list of ingredients and clear instructions on how to prepare each meal
-  * As a subscriber I would like to be given workouts I can do at home
+  * As a subscriber I can get a personalised meal plan so that I can lose weight
+  * As a subscriber I can see a list of ingredients and instructions for each meal so that I can prepare them easily
+  * As a Subscriber I can get workouts I can do at home so that I can improve my fitness
 
 ## Marketing
 
-  * As a user I can sign up for a newsletter to receive health and fitness tips
-  * As a user I would like to be able to visit a facebook page to keep up with the site.
+  * As a User I can sign up for a newsletter so that I can receive health and fitness tips
+  * As a user I can visit a facebook page so that keep up to date with the site
 
 ### Code Validation
 
