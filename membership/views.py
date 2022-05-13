@@ -119,6 +119,7 @@ def cancel(request):
 @login_required
 def settings_page(request):
     '''View to return the user settings page'''
+    membership_bool = False
     cancel_at_end = False
     if request.method == 'POST':
         subscription = stripe.Subscription.retrieve(
